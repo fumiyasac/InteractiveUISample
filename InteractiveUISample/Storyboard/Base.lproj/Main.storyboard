@@ -93,16 +93,28 @@
         <!--Main List View Controller-->
         <scene sceneID="pBr-qU-wkf">
             <objects>
-                <viewController id="xMx-tR-ouz" customClass="MainListViewController" customModule="InteractiveUISample" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="xMx-tR-ouz" customClass="MainListViewController" customModule="InteractiveUISample" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xrb-qr-Kus">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="555"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tbI-ry-79O">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="555"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="0.52549019610000003" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="tbI-ry-79O" firstAttribute="top" secondItem="xrb-qr-Kus" secondAttribute="top" id="2vE-ea-mL9"/>
+                            <constraint firstAttribute="trailing" secondItem="tbI-ry-79O" secondAttribute="trailing" id="P7x-sl-Dmx"/>
+                            <constraint firstAttribute="bottom" secondItem="tbI-ry-79O" secondAttribute="bottom" id="Urd-Xg-alu"/>
+                            <constraint firstItem="tbI-ry-79O" firstAttribute="leading" secondItem="xrb-qr-Kus" secondAttribute="leading" id="uQ6-oL-Sau"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2M3-Pa-3iB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="183" y="762"/>
+            <point key="canvasLocation" x="181.59999999999999" y="761.46926536731644"/>
         </scene>
         <!--Main Activity View Controller-->
         <scene sceneID="cFe-4P-B4A">
@@ -111,12 +123,23 @@
                     <view key="view" contentMode="scaleToFill" id="GUD-4Y-hWE">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="555"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HIt-nC-M4s">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="555"/>
+                            </scrollView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="0.96340661380000003" blue="0.114270275" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="HIt-nC-M4s" firstAttribute="top" secondItem="GUD-4Y-hWE" secondAttribute="top" id="Lcg-ho-HzG"/>
+                            <constraint firstAttribute="bottom" secondItem="HIt-nC-M4s" secondAttribute="bottom" id="dlr-M4-rDJ"/>
+                            <constraint firstAttribute="trailing" secondItem="HIt-nC-M4s" secondAttribute="trailing" id="iLY-N4-Auk"/>
+                            <constraint firstItem="HIt-nC-M4s" firstAttribute="leading" secondItem="GUD-4Y-hWE" secondAttribute="leading" id="qKH-Md-XSX"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LfB-1h-inq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1030" y="763"/>
+            <point key="canvasLocation" x="1029.5999999999999" y="762.36881559220399"/>
         </scene>
     </scenes>
 </document>
