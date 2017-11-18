@@ -10,14 +10,14 @@ import Foundation
 import UIKit
 
 class GradientHeaderView: CustomViewBase {
+
+    //UI部品の配置
+    @IBOutlet weak var headerBackButton: UIButton!
+
     @IBOutlet weak private var headerWrappedViewTopConstraint: NSLayoutConstraint!
     @IBOutlet weak private var headerTitle: UILabel!
-    @IBOutlet weak private var headerBackButton: UIButton!
 
-    private let DEAFAULT_HEADER_MARGIN: CGFloat = 20
-
-    //ヘッダーのボタンをタップした際に実行されるクロージャー
-    var headerBackButtonAction: (() -> ())?
+    private let defaultHeaderMargin: CGFloat = DeviceSize.sizeOfIphoneX() ? 44 : 20
 
     //MARK: - Function
 
@@ -25,25 +25,15 @@ class GradientHeaderView: CustomViewBase {
     func setTitle(_ title: String?) {
         headerTitle.text = title
     }
-    
+
     //ダミーのヘッダーの上方向の制約を更新する
     //[変数] constarint = (テーブルビューのヘッダー画像の高さ) - (NavigationBarの高さを引いたもの) - (テーブルビュー側の縦方向のスクロール量)
     func setHeaderNavigationTopConstraint(_ constant: CGFloat) {
         if constant > 0 {
-            headerWrappedViewTopConstraint.constant = DEAFAULT_HEADER_MARGIN + constant
+            headerWrappedViewTopConstraint.constant = defaultHeaderMargin + constant
         } else {
-            headerWrappedViewTopConstraint.constant = DEAFAULT_HEADER_MARGIN
+            headerWrappedViewTopConstraint.constant = defaultHeaderMargin
         }
         self.layoutIfNeeded()
-    }
-
-    //MARK: - Private Function
-
-    @objc private func headerBackButtonTapped(sender: UIButton) {
-        headerBackButtonAction?()
-    }
-
-    private func setupHeaderBackButton() {
-        headerBackButton.addTarget(self, action: #selector(self.headerBackButtonTapped(sender:)), for: [.touchUpInside, .touchUpOutside])
     }
 }

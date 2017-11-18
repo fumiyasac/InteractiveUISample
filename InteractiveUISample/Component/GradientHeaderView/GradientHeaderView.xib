@@ -11,7 +11,7 @@
     </dependencies>
     <customFonts key="customFonts">
         <array key="HiraginoKakuGothic.ttc">
-            <string>HiraginoSans-W3</string>
+            <string>HiraginoSans-W6</string>
         </array>
     </customFonts>
     <objects>
@@ -45,7 +45,7 @@
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="タイトル" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SmT-Y2-CJu">
                                         <rect key="frame" x="54" y="14" width="271" height="16"/>
-                                        <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="16"/>
+                                        <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="16"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -70,6 +70,7 @@
                                 </constraints>
                             </view>
                         </subviews>
+                        <color key="backgroundColor" red="0.46274509800000002" green="0.71372549019999998" blue="0.8862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="FUc-MG-6g2" firstAttribute="top" secondItem="Ou7-RU-bnD" secondAttribute="top" constant="20" id="67D-dw-C3N"/>
                             <constraint firstItem="FUc-MG-6g2" firstAttribute="leading" secondItem="Ou7-RU-bnD" secondAttribute="leading" id="Gnm-TN-cHi"/>
@@ -77,7 +78,7 @@
                             <constraint firstAttribute="bottom" secondItem="FUc-MG-6g2" secondAttribute="bottom" priority="750" id="sA1-KS-2f6"/>
                         </constraints>
                     </view>
-                    <color key="backgroundColor" red="0.46274509803921571" green="0.71372549019607845" blue="0.88627450980392153" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <blurEffect style="light"/>
                 </visualEffectView>
             </subviews>

@@ -12,6 +12,9 @@ class MainListViewController: UIViewController {
 
     @IBOutlet weak var mainListTableView: UITableView!
 
+    //適用するカスタムトランジションのクラス
+    fileprivate let articleCustomTransition = ArticleCustomTransition()
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -143,8 +146,35 @@ extension MainListViewController: UITableViewDataSource {
         //セル内に配置したボタンを押下した際に発動されるアクションの内容を入れる
         cell.showArticleAction = {
 
+            //記事表示用の画面へ遷移する
+            let storyboard = UIStoryboard(name: "Article", bundle: nil)
+            let articleViewController = storyboard.instantiateViewController(withIdentifier: "ArticleViewController") as! ArticleViewController
+
+            //カスタムトランジションのプロトコルを適用させる
+            let navigationController = UINavigationController(rootViewController: articleViewController)
+            navigationController.transitioningDelegate = self
+            self.present(navigationController, animated: true, completion: nil)
         }
 
         return cell
+    }
+}
+
+//MARK: - UIViewControllerTransitioningDelegate
+
+extension MainListViewController: UIViewControllerTransitioningDelegate {
+
+    //進む場合のアニメーションの設定を行う
+    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+
+        articleCustomTransition.presenting = true
+        return articleCustomTransition
+    }
+
+    //戻る場合のアニメーションの設定を行う
+    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+
+        articleCustomTransition.presenting = false
+        return articleCustomTransition
     }
 }

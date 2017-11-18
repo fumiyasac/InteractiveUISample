@@ -62,14 +62,14 @@ class MainListTableViewCell: UITableViewCell {
 
     //入力ボタンを押したタイミングで実行される処理
     @objc private func onDownArticleButton(sender: UIButton) {
-        UIView.animate(withDuration: 0.16, animations: {
+        UIView.animate(withDuration: 0.06, animations: {
             self.toArticleButtonWrappedView.transform = CGAffineTransform(scaleX: 0.9, y: 0.9)
         }, completion: nil)
     }
 
     //入力ボタンを押して離したタイミングで実行される処理
     @objc private func onUpArticleButton(sender: UIButton) {
-        UIView.animate(withDuration: 0.16, animations: {
+        UIView.animate(withDuration: 0.06, animations: {
             self.toArticleButtonWrappedView.transform = CGAffineTransform(scaleX: 1, y: 1)
         }, completion: { finished in
 

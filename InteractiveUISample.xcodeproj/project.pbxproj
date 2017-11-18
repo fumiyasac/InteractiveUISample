@@ -37,6 +37,10 @@
 		DEA210851FBAA69D0003BD84 /* MainListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEA210831FBAA69D0003BD84 /* MainListTableViewCell.xib */; };
 		DEA210871FBD7F7D0003BD84 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA210861FBD7F7C0003BD84 /* AppConstants.swift */; };
 		DECCA2D31FBFDD8A00B2C470 /* MainListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECCA2D21FBFDD8A00B2C470 /* MainListPresenter.swift */; };
+		DECCA2D71FBFFDEC00B2C470 /* SampleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECCA2D51FBFFDEC00B2C470 /* SampleTableViewCell.swift */; };
+		DECCA2D81FBFFDEC00B2C470 /* SampleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DECCA2D61FBFFDEC00B2C470 /* SampleTableViewCell.xib */; };
+		DECCA2DA1FC00A7E00B2C470 /* ArticleCustomTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECCA2D91FC00A7E00B2C470 /* ArticleCustomTransition.swift */; };
+		DECCA2DC1FC027F400B2C470 /* DeviceSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECCA2DB1FC027F400B2C470 /* DeviceSize.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,6 +100,10 @@
 		DEA210831FBAA69D0003BD84 /* MainListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainListTableViewCell.xib; sourceTree = "<group>"; };
 		DEA210861FBD7F7C0003BD84 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		DECCA2D21FBFDD8A00B2C470 /* MainListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainListPresenter.swift; sourceTree = "<group>"; };
+		DECCA2D51FBFFDEC00B2C470 /* SampleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleTableViewCell.swift; sourceTree = "<group>"; };
+		DECCA2D61FBFFDEC00B2C470 /* SampleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SampleTableViewCell.xib; sourceTree = "<group>"; };
+		DECCA2D91FC00A7E00B2C470 /* ArticleCustomTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleCustomTransition.swift; sourceTree = "<group>"; };
+		DECCA2DB1FC027F400B2C470 /* DeviceSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceSize.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -222,6 +230,8 @@
 				DEA210781FBAA5DD0003BD84 /* ArticleSummaryTableViewCell */,
 				DEA210211FB9E0E50003BD84 /* GradientHeaderView */,
 				DEA210811FBAA6850003BD84 /* MainListTableViewCell */,
+				DECCA2D51FBFFDEC00B2C470 /* SampleTableViewCell.swift */,
+				DECCA2D61FBFFDEC00B2C470 /* SampleTableViewCell.xib */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -256,6 +266,7 @@
 		DEA2100E1FB9D6480003BD84 /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				DECCA2DB1FC027F400B2C470 /* DeviceSize.swift */,
 			);
 			path = Module;
 			sourceTree = "<group>";
@@ -311,6 +322,7 @@
 			isa = PBXGroup;
 			children = (
 				DEA2101B1FB9D7CC0003BD84 /* CustomViewBase.swift */,
+				DECCA2D91FC00A7E00B2C470 /* ArticleCustomTransition.swift */,
 			);
 			path = BaseClass;
 			sourceTree = "<group>";
@@ -480,6 +492,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DEA20FE41FB824AB0003BD84 /* LaunchScreen.storyboard in Resources */,
+				DECCA2D81FBFFDEC00B2C470 /* SampleTableViewCell.xib in Resources */,
 				DEA210231FB9E1010003BD84 /* GradientHeaderView.xib in Resources */,
 				DEA210851FBAA69D0003BD84 /* MainListTableViewCell.xib in Resources */,
 				DEA20FE11FB824AB0003BD84 /* Assets.xcassets in Resources */,
@@ -584,8 +597,11 @@
 				DEA210711FBA699A0003BD84 /* ArticleViewController.swift in Sources */,
 				DEA2101A1FB9D76F0003BD84 /* UITableViewExtension.swift in Sources */,
 				DEA210671FBA5C790003BD84 /* MainActivityViewController.swift in Sources */,
+				DECCA2DC1FC027F400B2C470 /* DeviceSize.swift in Sources */,
 				DEA210251FB9E19E0003BD84 /* ArticleHeaderView.swift in Sources */,
 				DEA210651FBA58690003BD84 /* MainListViewController.swift in Sources */,
+				DECCA2DA1FC00A7E00B2C470 /* ArticleCustomTransition.swift in Sources */,
+				DECCA2D71FBFFDEC00B2C470 /* SampleTableViewCell.swift in Sources */,
 				DEA20FDC1FB824AB0003BD84 /* MainViewController.swift in Sources */,
 				DEA2107F1FBAA65A0003BD84 /* ArticleSummaryTableViewCell.swift in Sources */,
 				DEA210841FBAA69D0003BD84 /* MainListTableViewCell.swift in Sources */,
@@ -763,6 +779,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = S5BF5553KY;
 				INFOPLIST_FILE = InteractiveUISample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.just1factory.InteractiveUISample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -780,6 +797,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = S5BF5553KY;
 				INFOPLIST_FILE = InteractiveUISample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.just1factory.InteractiveUISample;
 				PRODUCT_NAME = "$(TARGET_NAME)";

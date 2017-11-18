@@ -38,6 +38,11 @@ class ArticleHeaderView: UIView {
         imageView.sd_setImage(with: URL(string: thumbnailUrl))
     }
 
+    //TODO: あとで削除する
+    func setHeaderImage() {
+        imageView.image = UIImage.init(named: "article")
+    }
+
     //UIScrollView(今回はUITableView)の変化量に応じてAutoLayoutの制約を動的に変更する
     func setParallaxEffectToHeaderView(_ scrollView: UIScrollView) {
 
