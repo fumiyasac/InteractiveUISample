@@ -85,6 +85,10 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="sk3-l8-YV4"/>
+                    <connections>
+                        <outlet property="contentsScrollView" destination="GcL-BW-xrJ" id="uOZ-oP-fgr"/>
+                        <outlet property="navigationScrollView" destination="vNI-IT-MRa" id="YVx-7j-jx9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -101,6 +105,7 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tbI-ry-79O">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="555"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.52549019610000003" blue="0.44705882349999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -110,7 +115,11 @@
                             <constraint firstAttribute="bottom" secondItem="tbI-ry-79O" secondAttribute="bottom" id="Urd-Xg-alu"/>
                             <constraint firstItem="tbI-ry-79O" firstAttribute="leading" secondItem="xrb-qr-Kus" secondAttribute="leading" id="uQ6-oL-Sau"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="3yB-oW-Tbv"/>
                     </view>
+                    <connections>
+                        <outlet property="mainListTableView" destination="tbI-ry-79O" id="vGd-GM-lcQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2M3-Pa-3iB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -135,6 +144,7 @@
                             <constraint firstAttribute="trailing" secondItem="HIt-nC-M4s" secondAttribute="trailing" id="iLY-N4-Auk"/>
                             <constraint firstItem="HIt-nC-M4s" firstAttribute="leading" secondItem="GUD-4Y-hWE" secondAttribute="leading" id="qKH-Md-XSX"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="fXd-uW-pTK"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LfB-1h-inq" userLabel="First Responder" sceneMemberID="firstResponder"/>

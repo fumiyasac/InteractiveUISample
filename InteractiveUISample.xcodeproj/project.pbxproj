@@ -35,6 +35,8 @@
 		DEA210801FBAA65A0003BD84 /* ArticleSummaryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEA2107E1FBAA65A0003BD84 /* ArticleSummaryTableViewCell.xib */; };
 		DEA210841FBAA69D0003BD84 /* MainListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA210821FBAA69D0003BD84 /* MainListTableViewCell.swift */; };
 		DEA210851FBAA69D0003BD84 /* MainListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEA210831FBAA69D0003BD84 /* MainListTableViewCell.xib */; };
+		DEA210871FBD7F7D0003BD84 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA210861FBD7F7C0003BD84 /* AppConstants.swift */; };
+		DECCA2D31FBFDD8A00B2C470 /* MainListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECCA2D21FBFDD8A00B2C470 /* MainListPresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +94,8 @@
 		DEA2107E1FBAA65A0003BD84 /* ArticleSummaryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArticleSummaryTableViewCell.xib; sourceTree = "<group>"; };
 		DEA210821FBAA69D0003BD84 /* MainListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainListTableViewCell.swift; sourceTree = "<group>"; };
 		DEA210831FBAA69D0003BD84 /* MainListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainListTableViewCell.xib; sourceTree = "<group>"; };
+		DEA210861FBD7F7C0003BD84 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
+		DECCA2D21FBFDD8A00B2C470 /* MainListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainListPresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -281,6 +285,7 @@
 		DEA210121FB9D6820003BD84 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
+				DECCA2D21FBFDD8A00B2C470 /* MainListPresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -288,6 +293,7 @@
 		DEA2101E1FB9DB960003BD84 /* Constant */ = {
 			isa = PBXGroup;
 			children = (
+				DEA210861FBD7F7C0003BD84 /* AppConstants.swift */,
 			);
 			path = Constant;
 			sourceTree = "<group>";
@@ -571,6 +577,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				DEA2107B1FBAA6160003BD84 /* ArticleContentsTableViewCell.swift in Sources */,
+				DECCA2D31FBFDD8A00B2C470 /* MainListPresenter.swift in Sources */,
+				DEA210871FBD7F7D0003BD84 /* AppConstants.swift in Sources */,
 				DEA210141FB9D6C00003BD84 /* NSObjectProtocolExtension.swift in Sources */,
 				DEA210751FBAA5470003BD84 /* ArticleDescriptionTableViewCell.swift in Sources */,
 				DEA210711FBA699A0003BD84 /* ArticleViewController.swift in Sources */,

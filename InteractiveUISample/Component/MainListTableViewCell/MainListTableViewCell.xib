@@ -19,26 +19,39 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="MainListTableViewCell" customModule="InteractiveUISample" customModuleProvider="target">
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="0.0" id="KGk-i7-Jjw" customClass="MainListTableViewCell" customModule="InteractiveUISample" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="320" height="330"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
                 <rect key="frame" x="0.0" y="0.0" width="320" height="329.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="49f-L7-CgF" userLabel="ListImageWrappedView">
+                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="49f-L7-CgF" userLabel="ListImageWrappedView">
                         <rect key="frame" x="15" y="15" width="290" height="145"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XaR-3F-qSl">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sample" translatesAutoresizingMaskIntoConstraints="NO" id="XaR-3F-qSl">
                                 <rect key="frame" x="0.0" y="0.0" width="290" height="145"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="海釣り" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f99-OG-yQq">
+                                <rect key="frame" x="10" y="117" width="70" height="18"/>
+                                <color key="backgroundColor" red="0.44339053439999998" green="0.50831036900000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="18" id="PLS-dr-bTn"/>
+                                    <constraint firstAttribute="width" constant="70" id="TbE-B1-s3Y"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="11"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="XaR-3F-qSl" firstAttribute="top" secondItem="49f-L7-CgF" secondAttribute="top" id="Epq-v0-Usu"/>
                             <constraint firstItem="XaR-3F-qSl" firstAttribute="leading" secondItem="49f-L7-CgF" secondAttribute="leading" id="I6E-Kd-lHq"/>
+                            <constraint firstItem="f99-OG-yQq" firstAttribute="leading" secondItem="49f-L7-CgF" secondAttribute="leading" constant="10" id="Ql5-hH-l66"/>
                             <constraint firstAttribute="bottom" secondItem="XaR-3F-qSl" secondAttribute="bottom" id="ciC-e4-k0g"/>
                             <constraint firstAttribute="trailing" secondItem="XaR-3F-qSl" secondAttribute="trailing" id="erB-0G-6NX"/>
+                            <constraint firstAttribute="bottom" secondItem="f99-OG-yQq" secondAttribute="bottom" constant="10" id="pf0-Kz-KBR"/>
                             <constraint firstAttribute="width" secondItem="49f-L7-CgF" secondAttribute="height" multiplier="2:1" id="ur6-PQ-eqs"/>
                         </constraints>
                     </view>
@@ -162,6 +175,7 @@
                 <outlet property="creditIconImageView" destination="w4s-Pi-Llk" id="BIL-Ie-sp9"/>
                 <outlet property="creditNameLabel" destination="ICN-i3-NmJ" id="6jh-qe-P33"/>
                 <outlet property="listDescriptionLabel" destination="Swp-BA-shb" id="wUf-Vg-ezy"/>
+                <outlet property="listImageCategoryLabel" destination="f99-OG-yQq" id="9yt-vU-Kv6"/>
                 <outlet property="listImageView" destination="XaR-3F-qSl" id="UGT-kb-0gf"/>
                 <outlet property="listImageWrappedView" destination="49f-L7-CgF" id="FS8-cl-lFx"/>
                 <outlet property="listTitleLabel" destination="0ip-E4-AYQ" id="DsG-pv-4XM"/>
@@ -169,7 +183,10 @@
                 <outlet property="toArticleButtonWrappedView" destination="jUA-z2-M04" id="BnV-L6-Mow"/>
                 <outlet property="topImageViewConstraint" destination="Epq-v0-Usu" id="uao-2o-DUY"/>
             </connections>
-            <point key="canvasLocation" x="25" y="-35"/>
+            <point key="canvasLocation" x="-41" y="204"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="sample" width="640" height="483"/>
+    </resources>
 </document>
