@@ -37,14 +37,14 @@ class ArticleDescriptionTableViewCell: UITableViewCell {
 
         //タイトルの行の高さを調節する
         let titleParagraphStyle = NSMutableParagraphStyle.init()
-        titleParagraphStyle.minimumLineHeight = 16
+        titleParagraphStyle.minimumLineHeight = 18
         let titleAttributedText = NSMutableAttributedString.init(string: article.title)
         titleAttributedText.addAttribute(NSAttributedStringKey.paragraphStyle, value: titleParagraphStyle, range: NSMakeRange(0, titleAttributedText.length))
         articleTitleLabel.attributedText = titleAttributedText
 
         //メインテキストの行の高さを調節する
         let mainParagraphStyle = NSMutableParagraphStyle.init()
-        mainParagraphStyle.minimumLineHeight = 18
+        mainParagraphStyle.minimumLineHeight = 20
         let mainAttributedText = NSMutableAttributedString.init(string: article.mainText)
         mainAttributedText.addAttribute(NSAttributedStringKey.paragraphStyle, value: titleParagraphStyle, range: NSMakeRange(0, mainAttributedText.length))
         articleMainTextLabel.attributedText = mainAttributedText

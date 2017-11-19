@@ -15,7 +15,7 @@ class ArticleCounterTableViewCell: UITableViewCell {
     @IBOutlet weak private var likesCounterLabel: CounterAnimationLabel!
 
     //カウンターアニメーションの時間設定
-    private let counterAnimationLabelDuration: TimeInterval = 5.0
+    private let counterAnimationLabelDuration: TimeInterval = 2.0
 
     //MARK: - Initializer
 

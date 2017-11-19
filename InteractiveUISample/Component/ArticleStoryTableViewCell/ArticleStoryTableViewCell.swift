@@ -62,6 +62,10 @@ class ArticleStoryTableViewCell: UITableViewCell {
         articleStoryImageWrappedView.layer.shadowOffset = CGSize(width: 0, height: 1)
         articleStoryImageWrappedView.layer.shadowColor = UIColor.black.cgColor
 
+        //ボタンの丸みをつける
+        articleStoryButtonWrappedView.layer.cornerRadius = 5.0
+        articleStoryButtonWrappedView.layer.masksToBounds = true
+
         //ボタンアクションに関する設定
         //TouchUp・TouchDownの時のイベントを設定する（完了時の具体的な処理はTouchUp側で設定すること）
         articleStoryButton.addTarget(self, action: #selector(self.onDownArticleStoryButton(sender:)), for: .touchDown)

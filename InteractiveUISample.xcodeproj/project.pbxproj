@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		1005A6D3698C8EE6236BB876 /* Pods_InteractiveUISample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0498819E4D2D94EFBDF29869 /* Pods_InteractiveUISample.framework */; };
+		DE6FE3EB1FC131A3006284CD /* APIRequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6FE3EA1FC131A3006284CD /* APIRequestManager.swift */; };
+		DE6FE3ED1FC1496F006284CD /* ArticlePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6FE3EC1FC1496F006284CD /* ArticlePresenter.swift */; };
 		DEA20FDA1FB824AB0003BD84 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA20FD91FB824AB0003BD84 /* AppDelegate.swift */; };
 		DEA20FDC1FB824AB0003BD84 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA20FDB1FB824AB0003BD84 /* MainViewController.swift */; };
 		DEA20FDF1FB824AB0003BD84 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEA20FDD1FB824AB0003BD84 /* Main.storyboard */; };
@@ -68,6 +70,8 @@
 		0498819E4D2D94EFBDF29869 /* Pods_InteractiveUISample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InteractiveUISample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		69BE0BA31974C6B88357586E /* Pods-InteractiveUISample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InteractiveUISample.release.xcconfig"; path = "Pods/Target Support Files/Pods-InteractiveUISample/Pods-InteractiveUISample.release.xcconfig"; sourceTree = "<group>"; };
 		D86E614D216A15A4F785033C /* Pods-InteractiveUISample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InteractiveUISample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-InteractiveUISample/Pods-InteractiveUISample.debug.xcconfig"; sourceTree = "<group>"; };
+		DE6FE3EA1FC131A3006284CD /* APIRequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequestManager.swift; sourceTree = "<group>"; };
+		DE6FE3EC1FC1496F006284CD /* ArticlePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlePresenter.swift; sourceTree = "<group>"; };
 		DEA20FD61FB824AB0003BD84 /* InteractiveUISample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InteractiveUISample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEA20FD91FB824AB0003BD84 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DEA20FDB1FB824AB0003BD84 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -275,6 +279,7 @@
 		DEA2100E1FB9D6480003BD84 /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				DE6FE3EA1FC131A3006284CD /* APIRequestManager.swift */,
 				DECCA2DB1FC027F400B2C470 /* DeviceSize.swift */,
 			);
 			path = Module;
@@ -299,6 +304,7 @@
 		DEA210121FB9D6820003BD84 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
+				DE6FE3EC1FC1496F006284CD /* ArticlePresenter.swift */,
 				DECCA2D21FBFDD8A00B2C470 /* MainListPresenter.swift */,
 			);
 			path = Presenter;
@@ -613,6 +619,7 @@
 				DEA210141FB9D6C00003BD84 /* NSObjectProtocolExtension.swift in Sources */,
 				DEA210751FBAA5470003BD84 /* ArticleDescriptionTableViewCell.swift in Sources */,
 				DEA210711FBA699A0003BD84 /* ArticleViewController.swift in Sources */,
+				DE6FE3ED1FC1496F006284CD /* ArticlePresenter.swift in Sources */,
 				DEA2101A1FB9D76F0003BD84 /* UITableViewExtension.swift in Sources */,
 				DEA210671FBA5C790003BD84 /* MainActivityViewController.swift in Sources */,
 				DECCA2DC1FC027F400B2C470 /* DeviceSize.swift in Sources */,
@@ -623,6 +630,7 @@
 				DEA20FDC1FB824AB0003BD84 /* MainViewController.swift in Sources */,
 				DEA2107F1FBAA65A0003BD84 /* ArticleSummaryTableViewCell.swift in Sources */,
 				DEA210841FBAA69D0003BD84 /* MainListTableViewCell.swift in Sources */,
+				DE6FE3EB1FC131A3006284CD /* APIRequestManager.swift in Sources */,
 				DECCA2E11FC0809B00B2C470 /* ArticleStoryTableViewCell.swift in Sources */,
 				DEA20FDA1FB824AB0003BD84 /* AppDelegate.swift in Sources */,
 				DEA2101C1FB9D7CC0003BD84 /* CustomViewBase.swift in Sources */,

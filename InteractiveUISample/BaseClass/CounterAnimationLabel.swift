@@ -36,11 +36,14 @@ class CounterAnimationLabel: UILabel {
         case Float
     }
 
+    //実行を1度だけとするか否かのフラグ
+    private var onceFlag = false
+
     //カウンターアニメーションにおいて値の更新の速さ補正用の値
     private let counterVelocity: Float = 3.0
 
     //カウント開始の値（この場合は1~9999の中でランダムに決定される）
-    private var startNumber: Float = 0.0
+    private let startNumber: Float = 0.0
 
     //最終的に.textに格納される値
     private var endNumber: Float = 0.0
@@ -76,14 +79,20 @@ class CounterAnimationLabel: UILabel {
 
     //アニメーションを伴って値を代入する
     func changeCountValueWithAnimation(_ value: Float, withDuration duration: TimeInterval, andAnimationType animationType: CounterAnimationType, andCounterType counterType: CounterType) {
-
-        self.startNumber = Float(1 + arc4random_uniform(999))
         self.endNumber = value
         self.duration = duration
         self.counterType = counterType
         self.counterAnimationType = animationType
         self.progress = 0
         self.lastUpdate = Date.timeIntervalSinceReferenceDate
+
+        //カウンターアニメーションが実行されたかを判定する
+        if self.onceFlag {
+            updateText(value: endNumber)
+            return
+        } else {
+            self.onceFlag = true
+        }
 
         //タイマーの初期化
         invalidateTimer()

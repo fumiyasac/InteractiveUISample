@@ -42,13 +42,13 @@
                                 <rect key="frame" x="0.0" y="0.0" width="280" height="48"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="海のある風景には物語が絶対にある。" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="687-gY-eus">
-                                        <rect key="frame" x="10" y="8" width="260" height="12"/>
+                                        <rect key="frame" x="10" y="12" width="260" height="12"/>
                                         <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="12"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="最終更新日：2017/11/20" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W6m-fl-jVx">
-                                        <rect key="frame" x="10" y="28" width="260" height="10"/>
+                                        <rect key="frame" x="10" y="30" width="260" height="10"/>
                                         <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="10"/>
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -59,14 +59,14 @@
                                     <constraint firstAttribute="height" constant="48" id="Ddb-yX-HYn"/>
                                     <constraint firstItem="W6m-fl-jVx" firstAttribute="leading" secondItem="Kvr-GF-sz9" secondAttribute="leading" constant="10" id="GUP-5o-UYq"/>
                                     <constraint firstAttribute="trailing" secondItem="687-gY-eus" secondAttribute="trailing" constant="10" id="J9X-Su-KQV"/>
-                                    <constraint firstAttribute="bottom" secondItem="W6m-fl-jVx" secondAttribute="bottom" constant="10" id="Wxa-dI-8J5"/>
+                                    <constraint firstAttribute="bottom" secondItem="W6m-fl-jVx" secondAttribute="bottom" constant="8" id="Wxa-dI-8J5"/>
                                     <constraint firstItem="687-gY-eus" firstAttribute="leading" secondItem="Kvr-GF-sz9" secondAttribute="leading" constant="10" id="bAD-pr-R2U"/>
                                     <constraint firstAttribute="trailing" secondItem="W6m-fl-jVx" secondAttribute="trailing" constant="10" id="nuo-vu-Sus"/>
-                                    <constraint firstItem="687-gY-eus" firstAttribute="top" secondItem="Kvr-GF-sz9" secondAttribute="top" constant="8" id="wX1-Lt-BGa"/>
-                                    <constraint firstItem="W6m-fl-jVx" firstAttribute="top" secondItem="687-gY-eus" secondAttribute="bottom" constant="8" id="zOq-j5-R7t"/>
+                                    <constraint firstItem="687-gY-eus" firstAttribute="top" secondItem="Kvr-GF-sz9" secondAttribute="top" constant="12" id="wX1-Lt-BGa"/>
+                                    <constraint firstItem="W6m-fl-jVx" firstAttribute="top" secondItem="687-gY-eus" secondAttribute="bottom" constant="6" id="zOq-j5-R7t"/>
                                 </constraints>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lqT-wK-Ydd">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cafe_sample" translatesAutoresizingMaskIntoConstraints="NO" id="lqT-wK-Ydd">
                                 <rect key="frame" x="10" y="48" width="260" height="173.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="lqT-wK-Ydd" secondAttribute="height" multiplier="3:2" id="42P-Pk-XDL"/>
@@ -108,6 +108,7 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstAttribute="height" constant="66" id="8LN-og-hPT"/>
                                     <constraint firstItem="3AZ-T7-MLw" firstAttribute="centerX" secondItem="K7k-D9-A9f" secondAttribute="centerX" id="OKU-fg-7Dt"/>
                                     <constraint firstItem="3AZ-T7-MLw" firstAttribute="centerY" secondItem="K7k-D9-A9f" secondAttribute="centerY" id="tin-sJ-qpo"/>
                                 </constraints>
@@ -146,4 +147,7 @@
             </connections>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="cafe_sample" width="720" height="480"/>
+    </resources>
 </document>

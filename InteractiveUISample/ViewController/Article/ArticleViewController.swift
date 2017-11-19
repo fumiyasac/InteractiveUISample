@@ -24,7 +24,7 @@ class ArticleViewController: UIViewController {
     fileprivate var gradientHeaderView: GradientHeaderView = GradientHeaderView()
     fileprivate var articleHeaderView: ArticleHeaderView = ArticleHeaderView()
 
-    /*
+    //記事コンテンツを格納するための変数
     fileprivate var articleContents: [Article] = [] {
         didSet {
             self.articleTableView.reloadData()
@@ -34,20 +34,27 @@ class ArticleViewController: UIViewController {
             }
         }
     }
+
+    //ArticlePresenterに設定したプロトコルを適用するための変数
     fileprivate var presenter: ArticlePresenter!
 
+    //表示するセルの定義を設定したEnum
     fileprivate enum CellType: Int {
-        case articleTitle           = 0
-        case articleFirstParagraph  = 1
-        case articleSecondParagraph = 2
-        case articleSummary         = 3
+        case articleCounter     = 0
+        case articleDescription = 1
+        case articleStory       = 2
+        case articleSummary     = 3
 
         static func getAllRow() -> [CellType] {
-            let allCellType: [CellType] = [.articleTitle, .articleFirstParagraph, .articleSecondParagraph, .articleSummary]
+            let allCellType: [CellType] = [
+                .articleCounter,
+                .articleDescription,
+                .articleStory,
+                .articleSummary
+            ]
             return allCellType
         }
     }
-    */
  
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,9 +63,7 @@ class ArticleViewController: UIViewController {
         setupGradientHeaderView()
         setupGradientHeaderImage()
         setupArticleTableView()
-
-        //TODO: あとで調節
-        articleHeaderView.setHeaderImage()
+        setupArticlePresenter()
     }
 
     override func didReceiveMemoryWarning() {
@@ -108,9 +113,47 @@ class ArticleViewController: UIViewController {
         articleTableView.dataSource         = self
         articleTableView.estimatedRowHeight = 340
         articleTableView.rowHeight = UITableViewAutomaticDimension
+        articleTableView.alpha = 0
 
-        //TODO: あとで調節
-        articleTableView.registerCustomCell(SampleTableViewCell.self)
+        articleTableView.registerCustomCell(ArticleCounterTableViewCell.self)
+        articleTableView.registerCustomCell(ArticleDescriptionTableViewCell.self)
+        articleTableView.registerCustomCell(ArticleStoryTableViewCell.self)
+        articleTableView.registerCustomCell(ArticleSummaryTableViewCell.self)
+    }
+
+    //Presenterとの接続に関する設定を行う
+    private func setupArticlePresenter() {
+        presenter = ArticlePresenter(presenter: self)
+        presenter.getArticle()
+    }
+}
+
+//MARK: - ArticlePresenterProtocol
+
+extension ArticleViewController: ArticlePresenterProtocol {
+
+    //Presenter側で通信が成功した場合の処理
+    func showArticle(_ article: Article) {
+        articleContents.append(article)
+        UIView.animate(withDuration: 0.26, animations: {
+            self.articleTableView.alpha = 1
+        })
+    }
+
+    //Presenter側で通信が失敗した場合の処理
+    func hideArticle() {
+        articleTableView.alpha = 0
+        let errorAlert = UIAlertController(
+            title: "通信状態エラー",
+            message: "データの取得に失敗しました。通信状態の良い場所ないしはお持ちのWiftに接続した状態で再度更新ボタンを押してお試し下さい。",
+            preferredStyle: UIAlertControllerStyle.alert
+        )
+        errorAlert.addAction(
+            UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil)
+        )
+        self.present(errorAlert, animated: true, completion: {
+            self.presenter.getArticle()
+        })
     }
 }
 
@@ -156,11 +199,42 @@ extension ArticleViewController: UITableViewDataSource, UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         //articleContentsにデータがセットされる → TableViewのリロード → コンテンツ表示の流れ
-        return 50
+        return (articleContents.count > 0) ? CellType.getAllRow().count : 0
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCustomCell(with: SampleTableViewCell.self)
-        return cell
+
+        //表示する記事データを取得する
+        let targetArticle = articleContents.first
+
+        //index番号に応じて読み込むセルを変えている
+        switch indexPath.row {
+
+        case CellType.articleCounter.rawValue:
+            let cell = tableView.dequeueReusableCustomCell(with: ArticleCounterTableViewCell.self)
+            cell.setCell(targetArticle!)
+            return cell
+
+        case CellType.articleDescription.rawValue:
+            let cell = tableView.dequeueReusableCustomCell(with: ArticleDescriptionTableViewCell.self)
+            cell.setCell(targetArticle!)
+            return cell
+
+        case CellType.articleStory.rawValue:
+            let cell = tableView.dequeueReusableCustomCell(with: ArticleStoryTableViewCell.self)
+            cell.showStoryAction = {
+                //ボタンを押した際に発動するアクション
+                print("ボタンを押されたよ！")
+            }
+            return cell
+
+        case CellType.articleSummary.rawValue:
+            let cell = tableView.dequeueReusableCustomCell(with: ArticleSummaryTableViewCell.self)
+            cell.setCell(targetArticle!)
+            return cell
+
+        default:
+            return UITableViewCell.init()
+        }
     }
 }
