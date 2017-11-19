@@ -93,6 +93,12 @@ class MainListTableViewCell: UITableViewCell {
         imageBackTopInitial = topImageViewConstraint.constant
         imageBackBottomInitial = bottomImageViewConstraint.constant
 
+        //カテゴリー表示用のラベルに角丸と色をつける
+        listImageCategoryLabel.textColor = UIColor.white
+        listImageCategoryLabel.backgroundColor = ColorDefinition.pointColor.getColor()
+        listImageCategoryLabel.layer.cornerRadius = 2.5
+        listImageCategoryLabel.layer.masksToBounds = true
+
         //画像のアイコンをつける
         creditIconImageView.image = UIImage.fontAwesomeIcon(name: .photo, textColor: ColorDefinition.navigationColor.getColor(), size: creditIconImageSize)
 

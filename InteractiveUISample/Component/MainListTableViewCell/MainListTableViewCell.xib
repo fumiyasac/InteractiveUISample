@@ -34,7 +34,7 @@
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="海釣り" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f99-OG-yQq">
                                 <rect key="frame" x="10" y="117" width="70" height="18"/>
-                                <color key="backgroundColor" red="0.44339053439999998" green="0.50831036900000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" red="0.44313725490196076" green="0.50980392156862742" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="18" id="PLS-dr-bTn"/>
                                     <constraint firstAttribute="width" constant="70" id="TbE-B1-s3Y"/>

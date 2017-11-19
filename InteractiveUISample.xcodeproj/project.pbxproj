@@ -196,7 +196,6 @@
 				DEA2100F1FB9D64E0003BD84 /* Model */,
 				DEA2100E1FB9D6480003BD84 /* Module */,
 				DEA210121FB9D6820003BD84 /* Presenter */,
-				DEA210111FB9D67B0003BD84 /* Realm */,
 				DEA210091FB9D47A0003BD84 /* Storyboard */,
 				DEA210071FB9D3370003BD84 /* ViewController */,
 			);
@@ -295,13 +294,6 @@
 				DEA2101F1FB9DCD50003BD84 /* ColorDefinition.swift */,
 			);
 			path = Enum;
-			sourceTree = "<group>";
-		};
-		DEA210111FB9D67B0003BD84 /* Realm */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Realm;
 			sourceTree = "<group>";
 		};
 		DEA210121FB9D6820003BD84 /* Presenter */ = {

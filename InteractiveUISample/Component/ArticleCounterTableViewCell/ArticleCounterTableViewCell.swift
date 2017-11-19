@@ -42,6 +42,8 @@ class ArticleCounterTableViewCell: UITableViewCell {
 
         //viewsおよびcounterの初期値を設定する
         viewsCounterLabel.text = "0"
+        viewsCounterLabel.textColor = ColorDefinition.pointColor.getColor()
         likesCounterLabel.text = "0"
+        likesCounterLabel.textColor = ColorDefinition.pointColor.getColor()
     }
 }

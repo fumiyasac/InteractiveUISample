@@ -11,11 +11,14 @@ import UIKit
 
 enum ColorDefinition {
     case navigationColor
+    case pointColor
 
     func getColor() -> UIColor {
         switch self {
         case .navigationColor:
-            return UIColor(code: "#76B6E2")
+            return UIColor.init(code: "#76B6E2")
+        case .pointColor:
+            return UIColor.init(code: "#7182FF")
         default:
             return UIColor.black
         }
