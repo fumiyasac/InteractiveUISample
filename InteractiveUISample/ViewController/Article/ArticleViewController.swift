@@ -9,6 +9,8 @@
 import UIKit
 
 class ArticleViewController: UIViewController {
+
+    //UI部品の配置
     @IBOutlet var articleTableView: UITableView!
 
     //記事上の画像ヘッダーのViewの高さ（iPhoneX用に補正あり）
@@ -113,6 +115,7 @@ class ArticleViewController: UIViewController {
         articleTableView.dataSource         = self
         articleTableView.estimatedRowHeight = 340
         articleTableView.rowHeight = UITableViewAutomaticDimension
+        articleTableView.delaysContentTouches = false
         articleTableView.alpha = 0
 
         articleTableView.registerCustomCell(ArticleCounterTableViewCell.self)

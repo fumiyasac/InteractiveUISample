@@ -50,7 +50,28 @@ class MainListTableViewCell: UITableViewCell {
         setupMainListTableViewCell()
     }
 
-    //MARK: - Functions
+    //MARK: - Function
+
+    func setCell(_ mainList: MainList) {
+        
+        //タイトルの行の高さを調節する
+        let titleParagraphStyle = NSMutableParagraphStyle.init()
+        titleParagraphStyle.minimumLineHeight = 18
+        let titleAttributedText = NSMutableAttributedString.init(string: mainList.title)
+        titleAttributedText.addAttribute(NSAttributedStringKey.paragraphStyle, value: titleParagraphStyle, range: NSMakeRange(0, titleAttributedText.length))
+        listTitleLabel.attributedText = titleAttributedText
+        
+        //メインテキストの行の高さを調節する
+        let mainParagraphStyle = NSMutableParagraphStyle.init()
+        mainParagraphStyle.minimumLineHeight = 20
+        let mainAttributedText = NSMutableAttributedString.init(string: mainList.mainText)
+        mainAttributedText.addAttribute(NSAttributedStringKey.paragraphStyle, value: titleParagraphStyle, range: NSMakeRange(0, mainAttributedText.length))
+        listDescriptionLabel.attributedText = mainAttributedText
+        
+        listImageView.sd_setImage(with: URL(string: mainList.thumbnailUrl))
+        listImageCategoryLabel.text = mainList.category
+        creditNameLabel.text = mainList.author
+    }
 
     //画像にかけられているAutoLayoutの制約を再計算して制約をかけ直す
     func setBackgroundOffset(_ offset: CGFloat) {
@@ -60,7 +81,7 @@ class MainListTableViewCell: UITableViewCell {
         bottomImageViewConstraint.constant = imageBackBottomInitial + pixelOffset
     }
 
-    //MARK: - Private Functions
+    //MARK: - Private Function
 
     //入力ボタンを押したタイミングで実行される処理
     @objc private func onDownArticleButton(sender: UIButton) {

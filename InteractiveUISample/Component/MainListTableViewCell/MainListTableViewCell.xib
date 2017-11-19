@@ -20,10 +20,10 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="0.0" id="KGk-i7-Jjw" customClass="MainListTableViewCell" customModule="InteractiveUISample" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="330"/>
+            <rect key="frame" x="0.0" y="0.0" width="320" height="307"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="329.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="306.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="49f-L7-CgF" userLabel="ListImageWrappedView">
@@ -56,7 +56,7 @@
                         </constraints>
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yqY-jZ-qep" userLabel="ListCreditWrappedView">
-                        <rect key="frame" x="15" y="175" width="290" height="30"/>
+                        <rect key="frame" x="15" y="168" width="290" height="30"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="w4s-Pi-Llk">
                                 <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
@@ -84,19 +84,19 @@
                         </constraints>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="タイトルがここに入ります。" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0ip-E4-AYQ">
-                        <rect key="frame" x="15" y="222.5" width="290" height="14"/>
+                        <rect key="frame" x="15" y="207.5" width="290" height="14"/>
                         <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="14"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="概要文が入ります。" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Swp-BA-shb">
-                        <rect key="frame" x="15" y="252.5" width="290" height="12"/>
+                        <rect key="frame" x="15" y="229.5" width="290" height="12"/>
                         <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="12"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="96O-oD-9pB" userLabel="ListDetailButtonWrappedView">
-                        <rect key="frame" x="15" y="279" width="290" height="34"/>
+                        <rect key="frame" x="15" y="256.5" width="290" height="34"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jUA-z2-M04">
                                 <rect key="frame" x="200" y="0.0" width="90" height="34"/>
@@ -156,15 +156,15 @@
                     <constraint firstAttribute="trailing" secondItem="yqY-jZ-qep" secondAttribute="trailing" constant="15" id="6f5-Ts-SkW"/>
                     <constraint firstItem="49f-L7-CgF" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="8ol-zW-iC8"/>
                     <constraint firstItem="49f-L7-CgF" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="ACa-ly-6Hr"/>
+                    <constraint firstItem="0ip-E4-AYQ" firstAttribute="top" secondItem="yqY-jZ-qep" secondAttribute="bottom" constant="9.5" id="BHO-86-aD5"/>
                     <constraint firstAttribute="trailing" secondItem="0ip-E4-AYQ" secondAttribute="trailing" constant="15" id="DNO-yp-J1w"/>
-                    <constraint firstItem="Swp-BA-shb" firstAttribute="top" secondItem="0ip-E4-AYQ" secondAttribute="bottom" constant="16" id="RQu-lB-A7z"/>
+                    <constraint firstItem="Swp-BA-shb" firstAttribute="top" secondItem="0ip-E4-AYQ" secondAttribute="bottom" constant="8" id="RQu-lB-A7z"/>
                     <constraint firstAttribute="trailing" secondItem="Swp-BA-shb" secondAttribute="trailing" constant="15" id="SbS-1N-h2X"/>
                     <constraint firstAttribute="trailing" secondItem="49f-L7-CgF" secondAttribute="trailing" constant="15" id="TdK-tU-w7j"/>
-                    <constraint firstItem="0ip-E4-AYQ" firstAttribute="top" secondItem="yqY-jZ-qep" secondAttribute="bottom" constant="17.5" id="UoS-Yk-mRJ"/>
-                    <constraint firstItem="96O-oD-9pB" firstAttribute="top" secondItem="Swp-BA-shb" secondAttribute="bottom" constant="14.5" id="WfT-EG-7zh"/>
+                    <constraint firstItem="96O-oD-9pB" firstAttribute="top" secondItem="Swp-BA-shb" secondAttribute="bottom" constant="15" id="WfT-EG-7zh"/>
                     <constraint firstItem="yqY-jZ-qep" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="eVc-Se-ve2"/>
                     <constraint firstAttribute="bottom" secondItem="96O-oD-9pB" secondAttribute="bottom" constant="16" id="fN4-0V-Ka4"/>
-                    <constraint firstItem="yqY-jZ-qep" firstAttribute="top" secondItem="49f-L7-CgF" secondAttribute="bottom" constant="15" id="gXD-zI-sfB"/>
+                    <constraint firstItem="yqY-jZ-qep" firstAttribute="top" secondItem="49f-L7-CgF" secondAttribute="bottom" constant="8" id="gXD-zI-sfB"/>
                     <constraint firstAttribute="trailing" secondItem="96O-oD-9pB" secondAttribute="trailing" constant="15" id="iWe-LR-9GJ"/>
                     <constraint firstItem="0ip-E4-AYQ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="uHI-mL-27A"/>
                 </constraints>

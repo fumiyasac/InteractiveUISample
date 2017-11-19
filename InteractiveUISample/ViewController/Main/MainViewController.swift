@@ -79,6 +79,7 @@ class MainViewController: UIViewController {
     private func setupContentsScrollView() {
         contentsScrollView.delegate = self
         contentsScrollView.isPagingEnabled = true
+        contentsScrollView.showsHorizontalScrollIndicator = false
     }
 
     //ボタン表示用のUIScrollViewの設定

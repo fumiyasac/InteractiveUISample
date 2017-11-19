@@ -10,7 +10,18 @@ import UIKit
 
 class MainListViewController: UIViewController {
 
+    //UI部品の配置
     @IBOutlet weak var mainListTableView: UITableView!
+
+    //記事コンテンツを格納するための変数
+    fileprivate var mainListContents: [MainList] = [] {
+        didSet {
+            self.mainListTableView.reloadData()
+        }
+    }
+
+    //MainListPresenterに設定したプロトコルを適用するための変数
+    fileprivate var presenter: MainListPresenter!
 
     //適用するカスタムトランジションのクラス
     fileprivate let articleCustomTransition = ArticleCustomTransition()
@@ -19,6 +30,7 @@ class MainListViewController: UIViewController {
         super.viewDidLoad()
 
         setupMainListTableView()
+        setupMainListPresenter()
     }
 
     override func didReceiveMemoryWarning() {
@@ -31,9 +43,26 @@ class MainListViewController: UIViewController {
     private func setupMainListTableView() {
         mainListTableView.delegate   = self
         mainListTableView.dataSource = self
-        mainListTableView.rowHeight  = 330
+        mainListTableView.rowHeight  = UITableViewAutomaticDimension
+        mainListTableView.estimatedRowHeight = 307
         mainListTableView.delaysContentTouches = false
         mainListTableView.registerCustomCell(MainListTableViewCell.self)
+    }
+
+    //Presenterとの接続に関する設定を行う
+    private func setupMainListPresenter() {
+        presenter = MainListPresenter(presenter: self)
+        presenter.getMainList()
+    }
+}
+
+//MARK: - MainListPresenterProtocol
+
+extension MainListViewController: MainListPresenterProtocol {
+    
+    //メインリストに表示するデータを取得した場合の処理
+    func showMainList(_ mainList: [MainList]) {
+        mainListContents = mainList
     }
 }
 
@@ -134,14 +163,16 @@ extension MainListViewController: UITableViewDataSource {
 
     //テーブルのセクションのセル数を設定する
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 6
+        return (mainListContents.count > 0) ? mainListContents.count : 0
     }
 
     //表示するセルの中身を設定する
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
         //Xibファイルを元にデータを作成する
+        let mainList = mainListContents[indexPath.row]
         let cell = tableView.dequeueReusableCustomCell(with: MainListTableViewCell.self)
+        cell.setCell(mainList)
 
         //セル内に配置したボタンを押下した際に発動されるアクションの内容を入れる
         cell.showArticleAction = {
