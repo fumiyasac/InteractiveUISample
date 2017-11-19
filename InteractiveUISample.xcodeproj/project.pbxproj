@@ -10,6 +10,10 @@
 		1005A6D3698C8EE6236BB876 /* Pods_InteractiveUISample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0498819E4D2D94EFBDF29869 /* Pods_InteractiveUISample.framework */; };
 		DE6FE3EB1FC131A3006284CD /* APIRequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6FE3EA1FC131A3006284CD /* APIRequestManager.swift */; };
 		DE6FE3ED1FC1496F006284CD /* ArticlePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6FE3EC1FC1496F006284CD /* ArticlePresenter.swift */; };
+		DE6FE4001FC1724F006284CD /* Story.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE6FE3FF1FC1724F006284CD /* Story.storyboard */; };
+		DE6FE4051FC17326006284CD /* StoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6FE4041FC17326006284CD /* StoryViewController.swift */; };
+		DE6FE4071FC17339006284CD /* StoryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6FE4061FC17339006284CD /* StoryDetailViewController.swift */; };
+		DE6FE4091FC1802F006284CD /* StoryPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6FE4081FC1802F006284CD /* StoryPageViewController.swift */; };
 		DEA20FDA1FB824AB0003BD84 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA20FD91FB824AB0003BD84 /* AppDelegate.swift */; };
 		DEA20FDC1FB824AB0003BD84 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA20FDB1FB824AB0003BD84 /* MainViewController.swift */; };
 		DEA20FDF1FB824AB0003BD84 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEA20FDD1FB824AB0003BD84 /* Main.storyboard */; };
@@ -72,6 +76,10 @@
 		D86E614D216A15A4F785033C /* Pods-InteractiveUISample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InteractiveUISample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-InteractiveUISample/Pods-InteractiveUISample.debug.xcconfig"; sourceTree = "<group>"; };
 		DE6FE3EA1FC131A3006284CD /* APIRequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequestManager.swift; sourceTree = "<group>"; };
 		DE6FE3EC1FC1496F006284CD /* ArticlePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlePresenter.swift; sourceTree = "<group>"; };
+		DE6FE3FF1FC1724F006284CD /* Story.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Story.storyboard; sourceTree = "<group>"; };
+		DE6FE4041FC17326006284CD /* StoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryViewController.swift; sourceTree = "<group>"; };
+		DE6FE4061FC17339006284CD /* StoryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryDetailViewController.swift; sourceTree = "<group>"; };
+		DE6FE4081FC1802F006284CD /* StoryPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryPageViewController.swift; sourceTree = "<group>"; };
 		DEA20FD61FB824AB0003BD84 /* InteractiveUISample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InteractiveUISample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEA20FD91FB824AB0003BD84 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DEA20FDB1FB824AB0003BD84 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -161,6 +169,16 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		DE6FE4011FC172DE006284CD /* Story */ = {
+			isa = PBXGroup;
+			children = (
+				DE6FE4061FC17339006284CD /* StoryDetailViewController.swift */,
+				DE6FE4041FC17326006284CD /* StoryViewController.swift */,
+				DE6FE4081FC1802F006284CD /* StoryPageViewController.swift */,
+			);
+			path = Story;
+			sourceTree = "<group>";
+		};
 		DEA20FCD1FB824AB0003BD84 = {
 			isa = PBXGroup;
 			children = (
@@ -227,6 +245,7 @@
 		DEA210071FB9D3370003BD84 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				DE6FE4011FC172DE006284CD /* Story */,
 				DEA2106D1FBA61110003BD84 /* Article */,
 				DEA2106C1FBA60FF0003BD84 /* Main */,
 			);
@@ -254,6 +273,7 @@
 			children = (
 				DEA20FDD1FB824AB0003BD84 /* Main.storyboard */,
 				DEA2106A1FBA60AB0003BD84 /* Article.storyboard */,
+				DE6FE3FF1FC1724F006284CD /* Story.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -517,6 +537,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE6FE4001FC1724F006284CD /* Story.storyboard in Resources */,
 				DEA20FE41FB824AB0003BD84 /* LaunchScreen.storyboard in Resources */,
 				DECCA2D81FBFFDEC00B2C470 /* SampleTableViewCell.xib in Resources */,
 				DEA210231FB9E1010003BD84 /* GradientHeaderView.xib in Resources */,
@@ -624,12 +645,15 @@
 				DEA210671FBA5C790003BD84 /* MainActivityViewController.swift in Sources */,
 				DECCA2DC1FC027F400B2C470 /* DeviceSize.swift in Sources */,
 				DEA210251FB9E19E0003BD84 /* ArticleHeaderView.swift in Sources */,
+				DE6FE4051FC17326006284CD /* StoryViewController.swift in Sources */,
 				DEA210651FBA58690003BD84 /* MainListViewController.swift in Sources */,
 				DECCA2DA1FC00A7E00B2C470 /* ArticleCustomTransition.swift in Sources */,
+				DE6FE4091FC1802F006284CD /* StoryPageViewController.swift in Sources */,
 				DECCA2D71FBFFDEC00B2C470 /* SampleTableViewCell.swift in Sources */,
 				DEA20FDC1FB824AB0003BD84 /* MainViewController.swift in Sources */,
 				DEA2107F1FBAA65A0003BD84 /* ArticleSummaryTableViewCell.swift in Sources */,
 				DEA210841FBAA69D0003BD84 /* MainListTableViewCell.swift in Sources */,
+				DE6FE4071FC17339006284CD /* StoryDetailViewController.swift in Sources */,
 				DE6FE3EB1FC131A3006284CD /* APIRequestManager.swift in Sources */,
 				DECCA2E11FC0809B00B2C470 /* ArticleStoryTableViewCell.swift in Sources */,
 				DEA20FDA1FB824AB0003BD84 /* AppDelegate.swift in Sources */,

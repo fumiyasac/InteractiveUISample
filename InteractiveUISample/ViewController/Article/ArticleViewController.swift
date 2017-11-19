@@ -224,7 +224,22 @@ extension ArticleViewController: UITableViewDataSource, UITableViewDelegate {
             let cell = tableView.dequeueReusableCustomCell(with: ArticleStoryTableViewCell.self)
             cell.showStoryAction = {
                 //ボタンを押した際に発動するアクション
-                print("ボタンを押されたよ！")
+                let temporaryAlert = UIAlertController(
+                    title: "続きは後ほど(来週に！)",
+                    message: "Storyページの作成及び構築は来週のどこぞの勉強会にてしっかりと発表する予定ですのでお待ち頂ければと思いますm(_ _)m",
+                    preferredStyle: UIAlertControllerStyle.alert
+                )
+                temporaryAlert.addAction(
+                    UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil)
+                )
+                self.present(temporaryAlert, animated: true, completion: nil)
+
+                //TODO: 本実装（Storyページの作成）
+                /*
+                let storyboard = UIStoryboard(name: "Story", bundle: nil)
+                let storyPageViewController = storyboard.instantiateViewController(withIdentifier: "StoryPageViewController") as! StoryPageViewController
+                self.present(storyPageViewController, animated: true, completion: nil)
+                */
             }
             return cell
 
