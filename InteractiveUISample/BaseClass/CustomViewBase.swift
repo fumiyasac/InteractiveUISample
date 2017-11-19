@@ -30,7 +30,7 @@ class CustomViewBase: UIView {
     }
     
     //コンテンツ表示用Viewの初期化処理
-    fileprivate func initContentView() {
+    private func initContentView() {
         
         //追加するcontentViewのクラス名を取得する
         let viewClass: AnyClass = type(of: self)

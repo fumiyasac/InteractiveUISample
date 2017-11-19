@@ -10,12 +10,43 @@ import UIKit
 
 class ArticleSummaryTableViewCell: UITableViewCell {
 
+    //UI部品の配置
+    @IBOutlet weak private var articleSummaryTitleLabel: UILabel!
+    @IBOutlet weak private var articleSummaryTextLabel: UILabel!
+
+    //MARK: - Initializer
+
     override func awakeFromNib() {
         super.awakeFromNib()
+
+        setupArticleSummaryTableViewCell()
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
+    //MARK: - Function
+
+    func setCell(_ article: Article) {
+
+        //タイトルの行の高さを調節する
+        let titleParagraphStyle = NSMutableParagraphStyle.init()
+        titleParagraphStyle.minimumLineHeight = 16
+        let titleAttributedText = NSMutableAttributedString.init(string: article.title)
+        titleAttributedText.addAttribute(NSAttributedStringKey.paragraphStyle, value: titleParagraphStyle, range: NSMakeRange(0, titleAttributedText.length))
+        articleSummaryTitleLabel.attributedText = titleAttributedText
+
+        //メインテキストの行の高さを調節する
+        let mainParagraphStyle = NSMutableParagraphStyle.init()
+        mainParagraphStyle.minimumLineHeight = 18
+        let mainAttributedText = NSMutableAttributedString.init(string: article.mainText)
+        mainAttributedText.addAttribute(NSAttributedStringKey.paragraphStyle, value: titleParagraphStyle, range: NSMakeRange(0, mainAttributedText.length))
+        articleSummaryTextLabel.attributedText = mainAttributedText
     }
-    
+
+    //MARK: - Private Function
+
+    private func setupArticleSummaryTableViewCell() {
+
+        //セルの装飾設定をする
+        self.accessoryType  = .none
+        self.selectionStyle = .none
+    }
 }

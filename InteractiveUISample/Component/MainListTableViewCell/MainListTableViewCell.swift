@@ -41,7 +41,9 @@ class MainListTableViewCell: UITableViewCell {
 
     //ViewControllerへ処理内容を引き渡すためのクロージャー
     var showArticleAction: (() -> ())?
-    
+
+    //MARK: - Initializer
+
     override func awakeFromNib() {
         super.awakeFromNib()
 
