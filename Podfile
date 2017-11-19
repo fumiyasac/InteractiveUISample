@@ -10,8 +10,6 @@ target 'InteractiveUISample' do
   # Utility
   pod 'Alamofire'
   pod 'SwiftyJSON'
-  pod 'RealmSwift'
-  pod 'SwiftyJSON'
   pod 'SDWebImage'
 
   # UserInterface
