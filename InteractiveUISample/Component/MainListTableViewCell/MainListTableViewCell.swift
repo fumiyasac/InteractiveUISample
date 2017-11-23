@@ -83,16 +83,16 @@ class MainListTableViewCell: UITableViewCell {
 
     //MARK: - Private Function
 
-    //入力ボタンを押したタイミングで実行される処理
-    @objc private func onDownArticleButton(sender: UIButton) {
-        UIView.animate(withDuration: 0.06, animations: {
+    //入力ボタンのTouchDownのタイミングで実行される処理
+    @objc private func onTouchDownArticleButton(sender: UIButton) {
+        UIView.animate(withDuration: 0.16, animations: {
             self.toArticleButtonWrappedView.transform = CGAffineTransform(scaleX: 0.9, y: 0.9)
         }, completion: nil)
     }
 
-    //入力ボタンを押して離したタイミングで実行される処理
-    @objc private func onUpArticleButton(sender: UIButton) {
-        UIView.animate(withDuration: 0.06, animations: {
+    //入力ボタンのTouchUpInsideのタイミングで実行される処理
+    @objc private func onTouchUpInsideArticleButton(sender: UIButton) {
+        UIView.animate(withDuration: 0.16, animations: {
             self.toArticleButtonWrappedView.transform = CGAffineTransform(scaleX: 1, y: 1)
         }, completion: { finished in
 
@@ -100,7 +100,14 @@ class MainListTableViewCell: UITableViewCell {
             self.showArticleAction?()
         })
     }
- 
+
+    //入力ボタンのTouchUpOutsideのタイミングで実行される処理
+    @objc private func onTouchUpOutsideArticleButton(sender: UIButton) {
+        UIView.animate(withDuration: 0.16, animations: {
+            self.toArticleButtonWrappedView.transform = CGAffineTransform(scaleX: 1, y: 1)
+        }, completion: nil)
+    }
+
     //このクラスの初期設定を行う
     private func setupMainListTableViewCell() {
 
@@ -132,8 +139,9 @@ class MainListTableViewCell: UITableViewCell {
         listImageWrappedView.layer.borderColor = UIColor.init(code: "dddddd").cgColor
 
         //ボタンアクションに関する設定
-        //TouchUp・TouchDownの時のイベントを設定する（完了時の具体的な処理はTouchUp側で設定すること）
-        toArticleButton.addTarget(self, action: #selector(self.onDownArticleButton(sender:)), for: .touchDown)
-        toArticleButton.addTarget(self, action: #selector(self.onUpArticleButton(sender:)), for: [.touchUpInside, .touchUpOutside])
+        //TouchDown・TouchUpInside・TouchUpOutsideの時のイベントを設定する（完了時の具体的な処理はTouchUpInside側で設定すること）
+        toArticleButton.addTarget(self, action: #selector(self.onTouchDownArticleButton(sender:)), for: .touchDown)
+        toArticleButton.addTarget(self, action: #selector(self.onTouchUpInsideArticleButton(sender:)), for: .touchUpInside)
+        toArticleButton.addTarget(self, action: #selector(self.onTouchUpOutsideArticleButton(sender:)), for: .touchUpOutside)
     }
 }
