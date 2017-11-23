@@ -30,9 +30,9 @@ UIのスクロールやタブUIの切り替えを伴うようなコンテンツ�
 
 ![Storyboardの構成](https://qiita-image-store.s3.amazonaws.com/0/17400/7fc74554-715e-6848-ee1e-05920d147395.jpeg)
 
-#### 本サンプルでの「View - Model - Presenter」構造と役割の解説
+#### MVP Pattern
 
-![本サンプルでの「View - Model - Presenter」構造と役割](https://qiita-image-store.s3.amazonaws.com/0/17400/e6495b31-1788-112e-752f-be200f38191f.jpeg)
+![MVP Pattern](https://camo.qiitausercontent.com/59f931dba80c900f9fd99cf890ff16558bac950f/68747470733a2f2f71696974612d696d6167652d73746f72652e73332e616d617a6f6e6177732e636f6d2f302f31373430302f33633439646462372d313763612d636333342d306230312d3666383265316463653134642e6a706567)
 
 ### 設計の重要ポイントになる部分
 
