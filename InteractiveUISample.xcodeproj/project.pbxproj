@@ -50,6 +50,7 @@
 		DEA210841FBAA69D0003BD84 /* MainListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA210821FBAA69D0003BD84 /* MainListTableViewCell.swift */; };
 		DEA210851FBAA69D0003BD84 /* MainListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEA210831FBAA69D0003BD84 /* MainListTableViewCell.xib */; };
 		DEA210871FBD7F7D0003BD84 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA210861FBD7F7C0003BD84 /* AppConstants.swift */; };
+		DEA9F5EA1FC945E700F15550 /* StoryPictureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA9F5E91FC945E700F15550 /* StoryPictureViewController.swift */; };
 		DECCA2D31FBFDD8A00B2C470 /* MainListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECCA2D21FBFDD8A00B2C470 /* MainListPresenter.swift */; };
 		DECCA2DA1FC00A7E00B2C470 /* ArticleCustomTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECCA2D91FC00A7E00B2C470 /* ArticleCustomTransition.swift */; };
 		DECCA2DC1FC027F400B2C470 /* DeviceSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECCA2DB1FC027F400B2C470 /* DeviceSize.swift */; };
@@ -131,6 +132,7 @@
 		DEA210821FBAA69D0003BD84 /* MainListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainListTableViewCell.swift; sourceTree = "<group>"; };
 		DEA210831FBAA69D0003BD84 /* MainListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainListTableViewCell.xib; sourceTree = "<group>"; };
 		DEA210861FBD7F7C0003BD84 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
+		DEA9F5E91FC945E700F15550 /* StoryPictureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryPictureViewController.swift; sourceTree = "<group>"; };
 		DECCA2D21FBFDD8A00B2C470 /* MainListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainListPresenter.swift; sourceTree = "<group>"; };
 		DECCA2D91FC00A7E00B2C470 /* ArticleCustomTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleCustomTransition.swift; sourceTree = "<group>"; };
 		DECCA2DB1FC027F400B2C470 /* DeviceSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceSize.swift; sourceTree = "<group>"; };
@@ -191,6 +193,7 @@
 				DE6FE4061FC17339006284CD /* StoryDetailViewController.swift */,
 				DE6FE4041FC17326006284CD /* StoryViewController.swift */,
 				DE6FE4081FC1802F006284CD /* StoryPageViewController.swift */,
+				DEA9F5E91FC945E700F15550 /* StoryPictureViewController.swift */,
 			);
 			path = Story;
 			sourceTree = "<group>";
@@ -709,6 +712,7 @@
 				DEA2107F1FBAA65A0003BD84 /* ArticleSummaryTableViewCell.swift in Sources */,
 				DEA210841FBAA69D0003BD84 /* MainListTableViewCell.swift in Sources */,
 				DE6FE4071FC17339006284CD /* StoryDetailViewController.swift in Sources */,
+				DEA9F5EA1FC945E700F15550 /* StoryPictureViewController.swift in Sources */,
 				DE6FE3EB1FC131A3006284CD /* APIRequestManager.swift in Sources */,
 				DECCA2E11FC0809B00B2C470 /* ArticleStoryTableViewCell.swift in Sources */,
 				DEA20FDA1FB824AB0003BD84 /* AppDelegate.swift in Sources */,

@@ -105,5 +105,53 @@
             </objects>
             <point key="canvasLocation" x="1719" y="125"/>
         </scene>
+        <!--Story Picture View Controller-->
+        <scene sceneID="cUK-ix-m0n">
+            <objects>
+                <viewController id="bko-qT-1Wt" customClass="StoryPictureViewController" customModule="InteractiveUISample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="aFq-pN-pEm">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UNv-TL-eBN">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sample" translatesAutoresizingMaskIntoConstraints="NO" id="4P3-Eu-qCd">
+                                        <rect key="frame" x="0.0" y="0.0" width="640" height="483"/>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="4P3-Eu-qCd" secondAttribute="bottom" id="BNG-1r-Tnf"/>
+                                    <constraint firstAttribute="trailing" secondItem="4P3-Eu-qCd" secondAttribute="trailing" id="QKH-9B-O0e"/>
+                                    <constraint firstItem="4P3-Eu-qCd" firstAttribute="top" secondItem="UNv-TL-eBN" secondAttribute="top" id="cqe-8B-2hP"/>
+                                    <constraint firstItem="4P3-Eu-qCd" firstAttribute="leading" secondItem="UNv-TL-eBN" secondAttribute="leading" id="mWZ-gD-6FZ"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="UNv-TL-eBN" firstAttribute="bottom" secondItem="kHi-k1-IZx" secondAttribute="bottom" id="0TW-OR-m1B"/>
+                            <constraint firstItem="UNv-TL-eBN" firstAttribute="leading" secondItem="kHi-k1-IZx" secondAttribute="leading" id="3lV-hG-OYA"/>
+                            <constraint firstItem="UNv-TL-eBN" firstAttribute="trailing" secondItem="kHi-k1-IZx" secondAttribute="trailing" id="7Kf-NA-uGt"/>
+                            <constraint firstItem="UNv-TL-eBN" firstAttribute="top" secondItem="aFq-pN-pEm" secondAttribute="top" id="AAn-dL-2dN"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="kHi-k1-IZx"/>
+                    </view>
+                    <connections>
+                        <outlet property="storyPictureImageBottomConstraint" destination="BNG-1r-Tnf" id="SnR-F9-KqQ"/>
+                        <outlet property="storyPictureImageLeftConstraint" destination="mWZ-gD-6FZ" id="ukh-Q6-u6T"/>
+                        <outlet property="storyPictureImageRightConstraint" destination="QKH-9B-O0e" id="taN-JP-OjW"/>
+                        <outlet property="storyPictureImageTopConstraint" destination="cqe-8B-2hP" id="hI8-Yl-uKm"/>
+                        <outlet property="storyPictureImageView" destination="4P3-Eu-qCd" id="9gT-T2-zOV"/>
+                        <outlet property="storyPictureScrollView" destination="UNv-TL-eBN" id="Zdw-SD-BoM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LVh-wg-fAE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2421.5999999999999" y="123.68815592203899"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="sample" width="640" height="483"/>
+    </resources>
 </document>
