@@ -35,6 +35,7 @@ class StoryPageViewController: UIViewController {
 
         setupNavigationBar()
         setupHeaderBackButton()
+        setupBackgroundImage()
         setupPageViewController()
     }
 
@@ -61,12 +62,17 @@ class StoryPageViewController: UIViewController {
         //タイトルを入れる
         self.navigationItem.title = "Story一覧"
     }
-    
+
     //戻るボタンに関するセッティングを行う
     private func setupHeaderBackButton() {
 
         //戻るボタンとアクション対象メソッドの紐付けをする
         headerBackButton.addTarget(self, action: #selector(self.headerBackButtonAction), for: .touchUpInside)
+    }
+
+    //背景の設定
+    private func setupBackgroundImage() {
+        storyBackgroundImage.image = UIImage(named: "background_sample")
     }
 
     private func setupPageViewController() {

@@ -8,13 +8,20 @@
 
 import UIKit
 
-//MEMO: Srotyboard内の設定に関して：
-// (1) storyPictureImageViewに対して、上下左右：0(優先度：1000)の制約をつける
-// (2) このままだと警告が出てしまうのでダミーの画像をInterfaceBuilder経由で入れておく
-// (3) storyPictureImageViewの「Clip to Bounds」にチェックをつけておく
-// (4) storyPictureImageViewの「User Interaction Enabled」と「Multiple Touch」のチェックをはずす
-// (5) storyPictureScrollViewの「User Interaction Enabled」と「Multiple Touch」のチェックをつけておく
-
+/**
+ * MEMO: Srotyboard内の設定に関して：
+ *
+ * このControllerでInterfaceBuilderで下記のような形で設定をしておく
+ *
+ * 手順：
+ * (1) storyPictureImageViewに対して、上下左右：0(優先度：1000)の制約をつける
+ * (2) このままだと警告が出てしまうのでダミーの画像をInterfaceBuilder経由で入れておく
+ * (3) storyPictureImageViewの「Clip to Bounds」にチェックをつけておく
+ * (4) storyPictureImageViewのContentModeを「Aspect Fit」にしておく
+ * (5) storyPictureImageViewの「User Interaction Enabled」と「Multiple Touch」のチェックをはずす
+ * (6) storyPictureScrollViewの「User Interaction Enabled」と「Multiple Touch」のチェックをつけておく
+ */
+ 
 class StoryPictureViewController: UIViewController {
 
     //表示させたい画像

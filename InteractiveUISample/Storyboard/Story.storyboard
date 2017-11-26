@@ -41,10 +41,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lqb-tS-gZI">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lqb-tS-gZI">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
-                            <view alpha="0.29999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I7Y-PK-qOj" userLabel="BackgroundView">
+                            <view alpha="0.71999999999999997" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I7Y-PK-qOj" userLabel="BackgroundView">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
@@ -185,12 +185,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view alpha="0.29999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nvG-g1-oUS">
+                            <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nvG-g1-oUS">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wtS-Z7-ret" customClass="StoryCardView" customModule="InteractiveUISample" customModuleProvider="target">
-                                <rect key="frame" x="32" y="138.5" width="311" height="389"/>
+                                <rect key="frame" x="30" y="138.5" width="315" height="389"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" id="8m6-a4-Ftf"/>
@@ -203,14 +203,15 @@
                             <constraint firstItem="nvG-g1-oUS" firstAttribute="bottom" secondItem="9EY-4c-mXL" secondAttribute="bottom" id="I13-dy-1Fx"/>
                             <constraint firstItem="nvG-g1-oUS" firstAttribute="top" secondItem="Nrj-bm-f7g" secondAttribute="top" id="Sl2-Wc-1RB"/>
                             <constraint firstItem="wtS-Z7-ret" firstAttribute="centerY" secondItem="Nrj-bm-f7g" secondAttribute="centerY" id="Ssv-NB-vHd"/>
-                            <constraint firstItem="wtS-Z7-ret" firstAttribute="leading" secondItem="9EY-4c-mXL" secondAttribute="leading" constant="32" id="ZEE-kY-l0h"/>
+                            <constraint firstItem="wtS-Z7-ret" firstAttribute="leading" secondItem="9EY-4c-mXL" secondAttribute="leading" constant="30" id="ZEE-kY-l0h"/>
                             <constraint firstItem="nvG-g1-oUS" firstAttribute="trailing" secondItem="9EY-4c-mXL" secondAttribute="trailing" id="gwi-rR-PgG"/>
                             <constraint firstItem="nvG-g1-oUS" firstAttribute="leading" secondItem="9EY-4c-mXL" secondAttribute="leading" id="oGv-H4-ONX"/>
-                            <constraint firstItem="9EY-4c-mXL" firstAttribute="trailing" secondItem="wtS-Z7-ret" secondAttribute="trailing" constant="32" id="zPb-3q-jHL"/>
+                            <constraint firstItem="9EY-4c-mXL" firstAttribute="trailing" secondItem="wtS-Z7-ret" secondAttribute="trailing" constant="30" id="zPb-3q-jHL"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="9EY-4c-mXL"/>
                     </view>
                     <connections>
+                        <outlet property="storyCardView" destination="wtS-Z7-ret" id="rLJ-0Q-R11"/>
                         <segue destination="OHZ-Ml-XFK" kind="presentation" identifier="ToStoryDetailViewController" id="W5Z-p2-egb"/>
                     </connections>
                 </viewController>
@@ -244,7 +245,7 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UNv-TL-eBN">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sample" translatesAutoresizingMaskIntoConstraints="NO" id="4P3-Eu-qCd">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sample" translatesAutoresizingMaskIntoConstraints="NO" id="4P3-Eu-qCd">
                                         <rect key="frame" x="0.0" y="0.0" width="640" height="483"/>
                                     </imageView>
                                 </subviews>
