@@ -30,8 +30,6 @@ class StoryCardView: CustomViewBase {
     @IBOutlet private weak var storyDescriptionLabel: UILabel!
     @IBOutlet private weak var storyDescriptionTextLabel: UILabel!
 
-    
-
     //アイコンイメージのサイズ設定
     private let iconImageViewSize: CGSize = CGSize(width: 24, height: 24)
 
@@ -44,6 +42,25 @@ class StoryCardView: CustomViewBase {
         super.awakeFromNib()
 
         setupStoryCardView()
+    }
+
+    //MARK: - Function
+
+    func setStory(_ story: Story) {
+        storyThumbnailImageView.image = story.photo
+        storyChapterLabel.text        = story.chapter
+        storyUpdateDateLabel.text     = story.publishedAt
+        storyTitleLabel.text          = story.title
+        storyEvaluationLabel.text     = story.evaluation
+        storyRankingLabel.text        = story.ranking
+        storyCommentLabel.text        = story.comment
+
+        //概要の行の高さを調節する
+        let summaryParagraphStyle = NSMutableParagraphStyle.init()
+        summaryParagraphStyle.minimumLineHeight = 20
+        let summaryAttributedText = NSMutableAttributedString.init(string: story.summary)
+        summaryAttributedText.addAttribute(NSAttributedStringKey.paragraphStyle, value: summaryParagraphStyle, range: NSMakeRange(0, summaryAttributedText.length))
+        storyDescriptionTextLabel.attributedText = summaryAttributedText
     }
 
     //MARK: - Private Function

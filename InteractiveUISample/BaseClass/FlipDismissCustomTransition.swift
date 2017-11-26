@@ -12,7 +12,7 @@ import UIKit
 class FlipDismissCustomTransition: NSObject {
     
     //トランジション（実行）の秒数
-    fileprivate let duration: TimeInterval = 0.48
+    fileprivate let duration: TimeInterval = 0.72
     
     //ディレイ（遅延）の秒数
     fileprivate let delay: TimeInterval = 0.00

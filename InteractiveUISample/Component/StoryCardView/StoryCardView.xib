@@ -46,7 +46,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cp8-gY-wKG" userLabel="ThumbnailImageView">
                     <rect key="frame" x="10" y="10" width="355" height="177.5"/>
                     <subviews>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sample" translatesAutoresizingMaskIntoConstraints="NO" id="j9q-wE-l5r">
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="j9q-wE-l5r">
                             <rect key="frame" x="0.0" y="0.0" width="355" height="177.5"/>
                         </imageView>
                         <view alpha="0.64000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1RJ-Lm-jMx" userLabel="BlackMaskView">
@@ -350,7 +350,4 @@
             <point key="canvasLocation" x="45.5" y="100.5"/>
         </view>
     </objects>
-    <resources>
-        <image name="sample" width="640" height="483"/>
-    </resources>
 </document>

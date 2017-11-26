@@ -65,7 +65,7 @@ class MainListTableViewCell: UITableViewCell {
         let mainParagraphStyle = NSMutableParagraphStyle.init()
         mainParagraphStyle.minimumLineHeight = 20
         let mainAttributedText = NSMutableAttributedString.init(string: mainList.mainText)
-        mainAttributedText.addAttribute(NSAttributedStringKey.paragraphStyle, value: titleParagraphStyle, range: NSMakeRange(0, mainAttributedText.length))
+        mainAttributedText.addAttribute(NSAttributedStringKey.paragraphStyle, value: mainParagraphStyle, range: NSMakeRange(0, mainAttributedText.length))
         listDescriptionLabel.attributedText = mainAttributedText
         
         listImageView.sd_setImage(with: URL(string: mainList.thumbnailUrl))

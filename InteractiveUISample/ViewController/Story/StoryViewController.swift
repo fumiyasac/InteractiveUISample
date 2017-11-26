@@ -13,14 +13,15 @@ class StoryViewController: UIViewController {
     //UI部品の配置
     @IBOutlet weak var storyCardView: StoryCardView!
 
-    //
-
     //適用するカスタムトランジションのクラス
     fileprivate let flipPresentCustomTransition = FlipPresentCustomTransition()
     fileprivate let flipDismissCustomTransition = FlipDismissCustomTransition()
 
     //スワイプアクションに関するControllerのインスタンス
     fileprivate let swipeInteractionController = SwipeInteractionController()
+
+    //表示対象のストーリーデータを格納する変数
+    private var targetStory: Story!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,8 +32,7 @@ class StoryViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ToStoryDetailViewController", let destinationViewController = segue.destination as? StoryDetailViewController {
 
-            //TODO: 表示したいデータの橋渡しを行う
-
+            destinationViewController.setStoryDetail(targetStory)
             destinationViewController.transitioningDelegate = self
             swipeInteractionController.wireToViewController(destinationViewController)
         }
@@ -40,6 +40,13 @@ class StoryViewController: UIViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+
+    //MARK: - Function
+
+    func setStoryCardView(_ story: Story) {
+        targetStory = story
+        storyCardView.setStory(story)
     }
 
     //MARK: - Private Function

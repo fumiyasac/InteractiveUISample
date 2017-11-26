@@ -27,8 +27,16 @@ class StoryPageViewController: UIViewController {
     //ページングして表示させるViewControllerを保持する配列
     fileprivate var storyViewControllerLists = [StoryViewController]()
 
-    //Storyデータを格納するための配列
+    //Storyデータを格納するための変数
+    fileprivate var storyContents: [Story] = [] {
+        didSet {
+            self.setupStoryViewControllerLists()
+            self.setupPageViewController()
+        }
+    }
 
+    //StoryPresenterに設定したプロトコルを適用するための変数
+    fileprivate var presenter: StoryPresenter!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,7 +44,8 @@ class StoryPageViewController: UIViewController {
         setupNavigationBar()
         setupHeaderBackButton()
         setupBackgroundImage()
-        setupPageViewController()
+        setupStoryPresenter()
+        //setupPageViewController()
     }
 
     override func didReceiveMemoryWarning() {
@@ -75,10 +84,16 @@ class StoryPageViewController: UIViewController {
         storyBackgroundImage.image = UIImage(named: "background_sample")
     }
 
+    //Presenterとの接続に関する設定を行う
+    private func setupStoryPresenter() {
+        presenter = StoryPresenter(presenter: self)
+        presenter.getStory()
+    }
+
     private func setupPageViewController() {
 
         //UIPageViewControllerで表示するViewControllerの作成
-        setupStoryViewControllerLists()
+        //setupStoryViewControllerLists()
 
         //ContainerViewにEmbedしたUIPageViewControllerを取得する
         pageViewController = childViewControllers[0] as? UIPageViewController
@@ -94,19 +109,30 @@ class StoryPageViewController: UIViewController {
     //Storyboard上に配置したViewController(StoryboardID = StoryViewController)をインスタンス化して配列に追加する
     private func setupStoryViewControllerLists() {
 
-        for index in 0...storyViewControllerListsCount {
+        for index in 0..<storyContents.count {
             let storyboard: UIStoryboard = UIStoryboard(name: "Story", bundle: Bundle.main)
             let storyViewController = storyboard.instantiateViewController(withIdentifier: "StoryViewController") as! StoryViewController
-            
-            //「タグ番号 = インデックスの値」でスワイプ完了時にどのViewControllerかを判別できるようにする
+
+            //「タグ番号 = インデックスの値」でスワイプ完了時にどのViewControllerかを判別できるようにする ＆ ストーリーデータをセットする
             storyViewController.view.tag = index
-            
+            storyViewController.setStoryCardView(storyContents[index])
+
             //storyViewControllerListsに追加する
             storyViewControllerLists.append(storyViewController)
         }
 
         //StoryViewControllerの総数をセットする
-        totalIndexLabel.text = "\(storyViewControllerListsCount)"
+        totalIndexLabel.text = "\(storyContents.count)"
+    }
+}
+
+//MARK: - StoryPresenterProtocol
+
+extension StoryPageViewController: StoryPresenterProtocol {
+
+    //写真に表示するデータを取得した場合の処理
+    func showStory(_ story: [Story]) {
+        storyContents = story
     }
 }
 

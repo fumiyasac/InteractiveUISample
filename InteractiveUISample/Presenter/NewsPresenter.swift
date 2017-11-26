@@ -8,7 +8,6 @@
 
 import Foundation
 import UIKit
-import SwiftyJSON
 
 protocol NewsPresenterProtocol: class {
     func showNews(_ news: [News])

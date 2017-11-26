@@ -24,37 +24,56 @@ import UIKit
  
 class StoryPictureViewController: UIViewController {
 
-    //表示させたい画像
-    var targetStoryPictureUrl: String? = nil /* {
-        didSet {
-            if let galleryPhotoUrl = targetGalleryPhotoUrl {
-                self.gallerySliderImageView.sd_setImage(with: URL(string: galleryPhotoUrl))
-                self.setGallerySliderImageViewScale(self.view.bounds.size)
-            }
-        }
-    } */
-
-   //UI部品の配置
+    //UI部品の配置
     @IBOutlet weak fileprivate var storyPictureScrollView: UIScrollView!
     @IBOutlet weak fileprivate var storyPictureImageView: UIImageView!
-
+    @IBOutlet weak private var storyPictureCloseButton: UIButton!
+    
     //UIScrollViewの中にあるUIImageViewの上下左右の制約
     @IBOutlet weak fileprivate var storyPictureImageTopConstraint: NSLayoutConstraint!
     @IBOutlet weak fileprivate var storyPictureImageBottomConstraint: NSLayoutConstraint!
     @IBOutlet weak fileprivate var storyPictureImageLeftConstraint: NSLayoutConstraint!
     @IBOutlet weak fileprivate var storyPictureImageRightConstraint: NSLayoutConstraint!
 
+    private var targetStoryPicture: Photo? = nil {
+        didSet {
+            if let photo = targetStoryPicture {
+                self.storyPictureImageView.image = photo.imageData
+                self.setStoryPictureImageViewScale(self.view.bounds.size)
+            }
+        }
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setupStoryPictureScrollView()
+        setupStoryDetailBackButton()
+    }
+
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        //画像スライダー用のUIScrollView等の初期設定を行う
+        setStoryPictureImageViewScale(self.view.bounds.size)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
 
+    //MARK: - Function
+
+    func setPicture(_ photo: Photo) {
+        targetStoryPicture = photo
+    }
+
     //MARK: - Private Function
+
+    //一覧に戻るボタンをタップした際に実行されるアクションとの紐付け
+    @objc private func onTouchUpInsideStoryPictureCloseButton() {
+        self.dismiss(animated: true, completion: nil)
+    }
 
     //Story用の写真を配置したUIScrollViewの初期設定
     private func setupStoryPictureScrollView() {
@@ -74,6 +93,11 @@ class StoryPictureViewController: UIViewController {
 
         //現在時点での拡大縮小比
         storyPictureScrollView.zoomScale = minScale
+    }
+
+    //戻るボタンの設定を行う
+    private func setupStoryDetailBackButton() {
+        storyPictureCloseButton.addTarget(self, action: #selector(self.onTouchUpInsideStoryPictureCloseButton), for: .touchUpInside)
     }
 }
 
