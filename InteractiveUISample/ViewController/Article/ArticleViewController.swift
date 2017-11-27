@@ -22,6 +22,9 @@ class ArticleViewController: UIViewController {
     //ナビゲーションバーの高さ（iPhoneX用に補正あり）
     fileprivate let navigationBarHeight: CGFloat = DeviceSize.sizeOfIphoneX() ? 88.5 : 64.0
 
+    //適用するカスタムトランジションのクラス
+    fileprivate let articleCustomTransition = ArticleCustomTransition()
+
     //記事上の画像ヘッダーおよびナビゲーションバーのインスタンス作成
     fileprivate var gradientHeaderView: GradientHeaderView = GradientHeaderView()
     fileprivate var articleHeaderView: ArticleHeaderView = ArticleHeaderView()
@@ -226,23 +229,15 @@ extension ArticleViewController: UITableViewDataSource, UITableViewDelegate {
         case CellType.articleStory.rawValue:
             let cell = tableView.dequeueReusableCustomCell(with: ArticleStoryTableViewCell.self)
             cell.showStoryAction = {
-                //ボタンを押した際に発動するアクション
-                let temporaryAlert = UIAlertController(
-                    title: "続きは後ほど(来週に！)",
-                    message: "Storyページの作成及び構築は来週のどこぞの勉強会にてしっかりと発表する予定ですのでお待ち頂ければと思いますm(_ _)m",
-                    preferredStyle: UIAlertControllerStyle.alert
-                )
-                temporaryAlert.addAction(
-                    UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil)
-                )
-                self.present(temporaryAlert, animated: true, completion: nil)
 
-                //TODO: 本実装（Storyページの作成）
-                /*
+                //記事表示用の画面へ遷移する
                 let storyboard = UIStoryboard(name: "Story", bundle: nil)
                 let storyPageViewController = storyboard.instantiateViewController(withIdentifier: "StoryPageViewController") as! StoryPageViewController
-                self.present(storyPageViewController, animated: true, completion: nil)
-                */
+
+                //カスタムトランジションのプロトコルを適用させる
+                let navigationController = UINavigationController(rootViewController: storyPageViewController)
+                navigationController.transitioningDelegate = self
+                self.present(navigationController, animated: true, completion: nil)
             }
             return cell
 
@@ -254,5 +249,24 @@ extension ArticleViewController: UITableViewDataSource, UITableViewDelegate {
         default:
             return UITableViewCell.init()
         }
+    }
+}
+
+//MARK: - UIViewControllerTransitioningDelegate
+
+extension ArticleViewController: UIViewControllerTransitioningDelegate {
+    
+    //進む場合のアニメーションの設定を行う
+    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        
+        articleCustomTransition.presenting = true
+        return articleCustomTransition
+    }
+    
+    //戻る場合のアニメーションの設定を行う
+    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        
+        articleCustomTransition.presenting = false
+        return articleCustomTransition
     }
 }
