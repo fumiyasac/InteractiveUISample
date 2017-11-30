@@ -156,14 +156,26 @@
                                 </state>
                             </button>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="RxX-dn-Ngy">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Ybr-ys-PaM">
+                                <rect key="frame" x="264" y="9.5" width="95" height="25"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="13"/>
+                                <inset key="titleEdgeInsets" minX="0.0" minY="0.0" maxX="-25" maxY="0.0"/>
+                                <state key="normal" title="関連ジャンル">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="currentIndexLabel" destination="MWR-K1-wTc" id="NUT-HC-I4U"/>
                         <outlet property="headerBackButton" destination="Yqe-ki-Xcg" id="8Zf-Ad-S4X"/>
+                        <outlet property="headerStoryRelatedButton" destination="Ybr-ys-PaM" id="11q-MA-psU"/>
                         <outlet property="storyBackgroundImage" destination="lqb-tS-gZI" id="uOJ-RN-deC"/>
                         <outlet property="storyContainerView" destination="772-TP-Ycs" id="Z7O-Yb-Oyk"/>
                         <outlet property="totalIndexLabel" destination="P2F-ak-tIY" id="nUl-V4-vwU"/>
-                        <segue destination="ena-RO-SUX" kind="show" id="jRe-uF-UGh"/>
+                        <segue destination="ena-RO-SUX" kind="show" identifier="ToStoryRelatedViewController" id="jRe-uF-UGh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cjl-9N-lsr" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -178,9 +190,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="si2-rZ-57l">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="si2-rZ-57l">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -192,6 +205,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Ms1-rZ-Xtz"/>
                     </view>
+                    <connections>
+                        <outlet property="storyRelatedTableView" destination="si2-rZ-57l" id="lE9-wf-Ku7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hMd-UL-Z6g" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -434,7 +450,7 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UNv-TL-eBN">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sample" translatesAutoresizingMaskIntoConstraints="NO" id="4P3-Eu-qCd">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dummy" translatesAutoresizingMaskIntoConstraints="NO" id="4P3-Eu-qCd">
                                         <rect key="frame" x="0.0" y="0.0" width="640" height="483"/>
                                     </imageView>
                                 </subviews>
@@ -533,6 +549,6 @@
     </scenes>
     <resources>
         <image name="arrow-icon" width="13" height="21"/>
-        <image name="sample" width="640" height="483"/>
+        <image name="dummy" width="640" height="483"/>
     </resources>
 </document>
