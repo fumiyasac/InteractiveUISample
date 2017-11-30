@@ -14,12 +14,10 @@ class StoryPageViewController: UIViewController {
     @IBOutlet weak private var storyBackgroundImage: UIImageView!
     @IBOutlet weak private var storyContainerView: UIView!
     @IBOutlet weak private var headerBackButton: UIButton!
-
+    @IBOutlet weak private var headerStoryRelatedButton: UIButton!
+    
     @IBOutlet weak fileprivate var currentIndexLabel: UILabel!
     @IBOutlet weak fileprivate var totalIndexLabel: UILabel!
-
-    //Storyデータの表示数
-    fileprivate let storyViewControllerListsCount: Int = 3
 
     //ContainerViewにEmbedしたUIPageViewControllerのインスタンスを保持する
     fileprivate var pageViewController: UIPageViewController?
@@ -43,9 +41,9 @@ class StoryPageViewController: UIViewController {
 
         setupNavigationBar()
         setupHeaderBackButton()
+        setupHeaderStoryRelatedButton()
         setupBackgroundImage()
         setupStoryPresenter()
-        //setupPageViewController()
     }
 
     override func didReceiveMemoryWarning() {
@@ -56,7 +54,12 @@ class StoryPageViewController: UIViewController {
 
     //ヘッダーの戻るボタンを押した際のアクション
     @objc private func headerBackButtonAction() {
-        self.dismiss(animated: true, completion: nil)
+        dismiss(animated: true, completion: nil)
+    }
+
+    //関連ジャンル一覧ボタンを押した際のアクション
+    @objc private func headerStoryRelatedButtonAction() {
+        performSegue(withIdentifier: "ToStoryRelatedViewController", sender: nil)
     }
 
     //この画面のナビゲーションバーの設定
@@ -70,6 +73,9 @@ class StoryPageViewController: UIViewController {
 
         //タイトルを入れる
         self.navigationItem.title = "Story一覧"
+
+        //このナビゲーションバーの戻るボタンのテキストを削除する
+        removeBackButtonText()
     }
 
     //戻るボタンに関するセッティングを行う
@@ -77,6 +83,13 @@ class StoryPageViewController: UIViewController {
 
         //戻るボタンとアクション対象メソッドの紐付けをする
         headerBackButton.addTarget(self, action: #selector(self.headerBackButtonAction), for: .touchUpInside)
+    }
+    
+    //関連ジャンル一覧ボタンに関するセッティングを行う
+    private func setupHeaderStoryRelatedButton() {
+
+        //関連ジャンル一覧ボタンとアクション対象メソッドの紐付けをする
+        headerStoryRelatedButton.addTarget(self, action: #selector(self.headerStoryRelatedButtonAction), for: .touchUpInside)
     }
 
     //背景の設定
@@ -101,6 +114,13 @@ class StoryPageViewController: UIViewController {
         //UIPageViewControllerのデータソースの宣言
         pageViewController!.delegate = self
         pageViewController!.dataSource = self
+
+        //MEMO: UIPageViewControllerでUIScrollViewDelegateが欲しい場合はこのように適用する
+        //for view in pageViewController!.view.subviews {
+        //    if let scrollView = view as? UIScrollView {
+        //        scrollView.delegate = self
+        //    }
+        //}
 
         //最初に表示する画面として配列の先頭のViewControllerを設定する
         pageViewController!.setViewControllers([storyViewControllerLists[0]], direction: .forward, animated: false, completion: nil)
@@ -130,11 +150,16 @@ class StoryPageViewController: UIViewController {
 
 extension StoryPageViewController: StoryPresenterProtocol {
 
-    //写真に表示するデータを取得した場合の処理
+    //表示するデータを取得した場合の処理
     func showStory(_ story: [Story]) {
         storyContents = story
     }
 }
+
+//MARK: - UIScrollViewDelegate
+
+//MEMO: 必要に応じて使う
+//extension StoryPageViewController: UIScrollViewDelegate {}
 
 //MARK: - UIPageViewControllerDelegate, UIPageViewControllerDataSource
 
@@ -184,7 +209,7 @@ extension StoryPageViewController: UIPageViewControllerDelegate, UIPageViewContr
         }
 
         //インデックスの値に応じてコンテンツを動かす
-        if index >= storyViewControllerListsCount - 1 {
+        if index >= storyViewControllerLists.count - 1 {
             return nil
         } else {
             return storyViewControllerLists[index + 1]

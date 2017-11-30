@@ -43,7 +43,7 @@ class SwipeInteractionController: UIPercentDrivenInteractiveTransition {
 
         //X軸方向の変化量を算出する
         let translation = gestureRecognizer.translation(in: gestureRecognizerSuperview)
-        var progress = (translation.x / 100)
+        var progress = (translation.x / 200)
         progress = CGFloat(fminf(fmaxf(Float(progress), 0.0), 1.0))
 
         //UIScreenEdgePanGestureRecognizerの状態によって動き方の場合分けにする
