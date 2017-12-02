@@ -57,7 +57,6 @@ class StoryRelatedViewController: UIViewController {
         storyRelatedTableView.delaysContentTouches = false
 
         storyRelatedTableView.registerCustomCell(StoryRelatedTableViewCell.self)
-        storyRelatedTableView.reloadData()
     }
 
     //Presenterとの接続に関する設定を行う
