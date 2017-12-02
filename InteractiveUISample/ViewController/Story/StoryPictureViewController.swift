@@ -114,7 +114,7 @@ extension StoryPictureViewController: UIScrollViewDelegate {
         return storyPictureImageView
     }
 
-    //スクロール中に呼び出され続けるメソッド ※UIScrollView内のUIImageViewの制約を更新する為に使用する
+    //ズームしたら呼び出されるメソッド ※UIScrollView内のUIImageViewの制約を更新する為に使用する
     func scrollViewDidZoom(_ scrollView: UIScrollView) {
         updateStoryPictureImageViewScale(self.view.bounds.size)
     }
@@ -132,6 +132,6 @@ extension StoryPictureViewController: UIScrollViewDelegate {
         storyPictureImageLeftConstraint.constant = xOffset
         storyPictureImageRightConstraint.constant = xOffset
 
-        view.layoutIfNeeded()
+        self.view.layoutIfNeeded()
     }
 }
