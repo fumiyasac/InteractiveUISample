@@ -105,9 +105,6 @@ class StoryPageViewController: UIViewController {
 
     private func setupPageViewController() {
 
-        //UIPageViewControllerで表示するViewControllerの作成
-        //setupStoryViewControllerLists()
-
         //ContainerViewにEmbedしたUIPageViewControllerを取得する
         pageViewController = childViewControllers[0] as? UIPageViewController
 
