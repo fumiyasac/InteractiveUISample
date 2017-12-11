@@ -115,3 +115,4 @@ UIまわりの実装と直接関係のない部分に関しては、下記のラ
 このサンプル全体の詳細解説とポイントをまとめたものは下記に掲載しております。
 
 + (Qiita前編) https://qiita.com/fumiyasac@github/items/d1b56ffc6d7d46c0a616 
++ (Qiita後編) https://qiita.com/fumiyasac@github/items/b694f9859cbb61c95c1a
