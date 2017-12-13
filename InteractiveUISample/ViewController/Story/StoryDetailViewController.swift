@@ -96,8 +96,8 @@ class StoryDetailViewController: UIViewController {
         //グラデーションの色をレイヤーに割り当てる
         gradientLayer.colors = gradientColors
 
-        //グラデーションレイヤーを下に敷いたImageViewと同じにする
-        gradientLayer.frame = storyDetailImageView.frame
+        //グラデーションレイヤーを下に敷いたImageViewと同じにする(ImageViewは画面いっぱいにしているのでself.view.frameにしている)
+        gradientLayer.frame = self.view.frame
 
         //グラデーションレイヤーをビューの一番下に配置
         storyDetailImageView.layer.insertSublayer(gradientLayer, at: 0)
