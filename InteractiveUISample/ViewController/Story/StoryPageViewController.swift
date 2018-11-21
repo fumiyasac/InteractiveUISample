@@ -69,7 +69,7 @@ class StoryPageViewController: UIViewController {
         self.navigationController?.navigationBar.barTintColor = ColorDefinition.navigationColor.getColor()
         self.navigationController?.navigationBar.isTranslucent = false
         self.navigationController?.navigationBar.tintColor = UIColor.white
-        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor : UIColor.white]
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.white]
 
         //タイトルを入れる
         self.navigationItem.title = "Story一覧"
@@ -106,7 +106,7 @@ class StoryPageViewController: UIViewController {
     private func setupPageViewController() {
 
         //ContainerViewにEmbedしたUIPageViewControllerを取得する
-        pageViewController = childViewControllers[0] as? UIPageViewController
+        pageViewController = children[0] as? UIPageViewController
 
         //UIPageViewControllerのデータソースの宣言
         pageViewController!.delegate = self

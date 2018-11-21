@@ -1,6 +1,6 @@
 // FontAwesomeSegmentedControl.swift
 //
-// Copyright (c) 2017 Maik639
+// Copyright (c) 2014-present FontAwesome.swift contributors
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -25,6 +25,7 @@ import UIKit
 @IBDesignable public class FontAwesomeSegmentedControl: UISegmentedControl {
 
     @IBInspectable public var isFontAwesomeCSSCode: Bool = true
+    @IBInspectable public var styleName: String = "Brands"
     @IBInspectable public var size: CGFloat = 22.0
 
     public override func awakeFromNib() {
@@ -38,15 +39,15 @@ import UIKit
 
     private func useFontAwesome() {
         updateText {
-            for i in 0 ..< numberOfSegments {
-                if let cssCode = titleForSegment(at: i) {
-                    setTitle(String.fontAwesomeIcon(code: cssCode), forSegmentAt: i)
+            for index in 0 ..< numberOfSegments {
+                if let cssCode = titleForSegment(at: index) {
+                    setTitle(String.fontAwesomeIcon(code: cssCode), forSegmentAt: index)
                 }
             }
         }
         updateFontAttributes { (state, font) in
             var attributes = titleTextAttributes(for: state) ?? [:]
-            attributes[NSAttributedStringKey.font] = font
+            attributes[NSAttributedString.Key.font] = font
             setTitleTextAttributes(attributes, for: state)
         }
     }
@@ -54,16 +55,19 @@ import UIKit
 }
 
 extension FontAwesomeSegmentedControl: FontAwesomeTextRepresentable {
-
     var isTextCSSCode: Bool {
         return isFontAwesomeCSSCode
+    }
+
+    var fontStyle: FontAwesomeStyle {
+        return FontAwesomeStyle(rawValue: styleName) ?? .solid
     }
 
     var textSize: CGFloat {
         return size
     }
 
-    static func supportedStates() -> [UIControlState] {
+    static func supportedStates() -> [UIControl.State] {
         if #available(iOS 9.0, *) {
             return [.normal, .highlighted, .disabled, .focused, .selected, .application, .reserved]
         } else {

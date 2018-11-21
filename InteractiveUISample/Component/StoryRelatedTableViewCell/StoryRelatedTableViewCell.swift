@@ -44,7 +44,7 @@ class StoryRelatedTableViewCell: UITableViewCell {
         self.selectionStyle = .none
 
         //アイコンに関する設定
-        let bookFontImage = UIImage.fontAwesomeIcon(name: .book, textColor: UIColor.init(code: "#BBBBBB"), size: iconImageViewSize)
+        let bookFontImage = UIImage.fontAwesomeIcon(name: .book, style: .solid, textColor: UIColor.init(code: "#BBBBBB"), size: iconImageViewSize)
         storyRelatedIconImageView.backgroundColor = UIColor.clear
         storyRelatedIconImageView.image = bookFontImage
     }

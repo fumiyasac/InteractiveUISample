@@ -45,7 +45,7 @@ extension FlipPresentCustomTransition: UIViewControllerAnimatedTransitioning {
         let containerView = transitionContext.containerView
 
         //遷移前と遷移後のframe（大きさと位置）を定義する
-        let initialFrame = CGRect(x: 0, y: 0, width: CGFloat(DeviceSize.screenWidth()), height: CGFloat(DeviceSize.screenHeight()))
+        let initialFrame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
         let finalFrame = transitionContext.finalFrame(for: toViewController)
 
         //UIViewのスナップショットを取得する

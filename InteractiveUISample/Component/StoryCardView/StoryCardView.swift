@@ -59,7 +59,7 @@ class StoryCardView: CustomViewBase {
         let summaryParagraphStyle = NSMutableParagraphStyle.init()
         summaryParagraphStyle.minimumLineHeight = 20
         let summaryAttributedText = NSMutableAttributedString.init(string: story.summary)
-        summaryAttributedText.addAttribute(NSAttributedStringKey.paragraphStyle, value: summaryParagraphStyle, range: NSMakeRange(0, summaryAttributedText.length))
+        summaryAttributedText.addAttribute(NSAttributedString.Key.paragraphStyle, value: summaryParagraphStyle, range: NSMakeRange(0, summaryAttributedText.length))
         storyDescriptionTextLabel.attributedText = summaryAttributedText
     }
 
@@ -90,15 +90,15 @@ class StoryCardView: CustomViewBase {
         storyDescriptionLabel.layer.masksToBounds = true
 
         //アイコンに関する設定
-        let heartFontImage = UIImage.fontAwesomeIcon(name: .heart, textColor: UIColor.init(code: "#FF6222"), size: iconImageViewSize)
+        let heartFontImage = UIImage.fontAwesomeIcon(name: .heart, style: .solid, textColor: UIColor.init(code: "#FF6222"), size: iconImageViewSize)
         storyEvaluationImageView.backgroundColor = UIColor.clear
         storyEvaluationImageView.image = heartFontImage
 
-        let trophyFontImage = UIImage.fontAwesomeIcon(name: .trophy, textColor: UIColor.init(code: "#FD9D01"), size: iconImageViewSize)
+        let trophyFontImage = UIImage.fontAwesomeIcon(name: .trophy, style: .solid, textColor: UIColor.init(code: "#FD9D01"), size: iconImageViewSize)
         storyRankingImageView.backgroundColor = UIColor.clear
         storyRankingImageView.image = trophyFontImage
 
-        let commentFontImage = UIImage.fontAwesomeIcon(name: .comment, textColor: UIColor.init(code: "#73C34D"), size: iconImageViewSize)
+        let commentFontImage = UIImage.fontAwesomeIcon(name: .comment, style: .solid, textColor: UIColor.init(code: "#73C34D"), size: iconImageViewSize)
         storyCommentImageView.backgroundColor = UIColor.clear
         storyCommentImageView.image = commentFontImage
     }

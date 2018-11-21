@@ -81,7 +81,7 @@ class ArticleHeaderView: UIView {
         //このViewに対してwrappedViewに張るConstraint（横方向 → 左：0, 右：0）
         let wrappedViewConstarintH = NSLayoutConstraint.constraints(
             withVisualFormat: "H:|[wrappedView]|",
-            options: NSLayoutFormatOptions(rawValue: 0),
+            options: NSLayoutConstraint.FormatOptions(rawValue: 0),
             metrics: nil,
             views: ["wrappedView" : wrappedView]
         )
@@ -89,7 +89,7 @@ class ArticleHeaderView: UIView {
         //このViewに対してwrappedViewに張るConstraint（縦方向 → 上：なし, 下：0）
         let wrappedViewConstarintV = NSLayoutConstraint.constraints(
             withVisualFormat: "V:[wrappedView]|",
-            options: NSLayoutFormatOptions(rawValue: 0),
+            options: NSLayoutConstraint.FormatOptions(rawValue: 0),
             metrics: nil,
             views: ["wrappedView" : wrappedView]
         )
@@ -119,7 +119,7 @@ class ArticleHeaderView: UIView {
         //wrappedViewに対してimageViewに張るConstraint（横方向 → 左：0, 右：0）
         let imageViewConstarintH = NSLayoutConstraint.constraints(
             withVisualFormat: "H:|[imageView]|",
-            options: NSLayoutFormatOptions(rawValue: 0),
+            options: NSLayoutConstraint.FormatOptions(rawValue: 0),
             metrics: nil,
             views: ["imageView" : imageView]
         )

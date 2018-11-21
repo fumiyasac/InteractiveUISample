@@ -34,14 +34,14 @@ class MainActivityNewsTableViewCell: UITableViewCell {
         let titleParagraphStyle = NSMutableParagraphStyle.init()
         titleParagraphStyle.minimumLineHeight = 18
         let titleAttributedText = NSMutableAttributedString.init(string: news.title)
-        titleAttributedText.addAttribute(NSAttributedStringKey.paragraphStyle, value: titleParagraphStyle, range: NSMakeRange(0, titleAttributedText.length))
+        titleAttributedText.addAttribute(NSAttributedString.Key.paragraphStyle, value: titleParagraphStyle, range: NSMakeRange(0, titleAttributedText.length))
         newsTitleLabel.attributedText = titleAttributedText
 
         //メインテキストの行の高さを調節する
         let mainParagraphStyle = NSMutableParagraphStyle.init()
         mainParagraphStyle.minimumLineHeight = 20
         let mainAttributedText = NSMutableAttributedString.init(string: news.mainText)
-        mainAttributedText.addAttribute(NSAttributedStringKey.paragraphStyle, value: titleParagraphStyle, range: NSMakeRange(0, mainAttributedText.length))
+        mainAttributedText.addAttribute(NSAttributedString.Key.paragraphStyle, value: titleParagraphStyle, range: NSMakeRange(0, mainAttributedText.length))
         newsDetailLabel.attributedText = mainAttributedText
 
         newsImageView.sd_setImage(with: URL(string: news.thumbnailUrl))

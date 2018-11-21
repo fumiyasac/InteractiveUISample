@@ -69,7 +69,7 @@ class MainViewController: UIViewController {
 
         //NavigationControllerのデザイン調整を行う
         self.navigationController?.navigationBar.tintColor = UIColor.white
-        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor : UIColor.white]
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.white]
 
         //タイトルを入れる
         self.navigationItem.title = "海の見える風景"
@@ -103,8 +103,8 @@ class MainViewController: UIViewController {
             )
             button.backgroundColor = UIColor.clear
             button.titleLabel!.font = UIFont(name: AppConstants.BOLD_FONT_NAME, size: 14)!
-            button.setTitle(navigationNameList[i], for: UIControlState())
-            button.setTitleColor(ColorDefinition.navigationColor.getColor(), for: UIControlState())
+            button.setTitle(navigationNameList[i], for: UIControl.State())
+            button.setTitleColor(ColorDefinition.navigationColor.getColor(), for: UIControl.State())
             button.tag = i
             button.addTarget(self, action: #selector(self.navigationScrollViewButtonTapped(button:)), for: .touchUpInside)
 
@@ -126,7 +126,7 @@ class MainViewController: UIViewController {
         )
         bottomLineView.backgroundColor = ColorDefinition.navigationColor.getColor()
         navigationScrollView.addSubview(bottomLineView)
-        navigationScrollView.bringSubview(toFront: bottomLineView)
+        navigationScrollView.bringSubviewToFront(bottomLineView)
     }
 }
 

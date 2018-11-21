@@ -58,7 +58,7 @@ class MainActivityNewsViewController: UIViewController {
     private func setupNewsTableView() {
         newsTableView.delegate   = self
         newsTableView.dataSource = self
-        newsTableView.rowHeight  = UITableViewAutomaticDimension
+        newsTableView.rowHeight  = UITableView.automaticDimension
         newsTableView.estimatedRowHeight = 120
         newsTableView.delaysContentTouches = false
         newsTableView.registerCustomCell(MainActivityNewsTableViewCell.self)

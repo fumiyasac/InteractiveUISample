@@ -70,7 +70,7 @@ class StoryRelatedHeaderView: CustomViewBase {
     private func setupStoryRelatedHeaderView() {
 
         //アイコンに関する設定
-        let angleDownFontImage = UIImage.fontAwesomeIcon(name: .angleDown, textColor: ColorDefinition.pointColor.getColor(), size: iconImageViewSize)
+        let angleDownFontImage = UIImage.fontAwesomeIcon(name: .angleDown, style: .solid, textColor: ColorDefinition.pointColor.getColor(), size: iconImageViewSize)
         storyRelatedHeaderIconImageView.backgroundColor = UIColor.clear
         storyRelatedHeaderIconImageView.image = angleDownFontImage
     }

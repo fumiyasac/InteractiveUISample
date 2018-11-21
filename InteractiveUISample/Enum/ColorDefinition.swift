@@ -19,8 +19,6 @@ enum ColorDefinition {
             return UIColor.init(code: "#76B6E2")
         case .pointColor:
             return UIColor.init(code: "#7182FF")
-        default:
-            return UIColor.black
         }
     }
 }

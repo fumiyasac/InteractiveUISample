@@ -1,33 +1,30 @@
 PODS:
-  - Alamofire (4.5.1)
-  - FontAwesome.swift (1.2.0)
-  - SDWebImage (4.1.2):
-    - SDWebImage/Core (= 4.1.2)
-  - SDWebImage/Core (4.1.2)
-  - SwiftyJSON (3.1.4)
+  - Alamofire (4.7.3)
+  - FontAwesome.swift (1.4.6)
+  - SDWebImage (4.4.2):
+    - SDWebImage/Core (= 4.4.2)
+  - SDWebImage/Core (4.4.2)
+  - SwiftyJSON (4.2.0)
 
 DEPENDENCIES:
   - Alamofire
-  - FontAwesome.swift (from `https://github.com/thii/FontAwesome.swift`, branch `swift-4.0`)
+  - FontAwesome.swift
   - SDWebImage
   - SwiftyJSON
 
-EXTERNAL SOURCES:
-  FontAwesome.swift:
-    :branch: swift-4.0
-    :git: https://github.com/thii/FontAwesome.swift
-
-CHECKOUT OPTIONS:
-  FontAwesome.swift:
-    :commit: ee1bf6b3db08f969ec7508c0feca3bac0d8b96ff
-    :git: https://github.com/thii/FontAwesome.swift
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Alamofire
+    - FontAwesome.swift
+    - SDWebImage
+    - SwiftyJSON
 
 SPEC CHECKSUMS:
-  Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
-  FontAwesome.swift: 609815397a9b51cb4d774969787163c7d1306739
-  SDWebImage: cb6f9f266a9977741efcbc21e618e8be3734c774
-  SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
+  Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
+  FontAwesome.swift: 18fb500c0decc2bbfadf2ae16a936704ec2c49bd
+  SDWebImage: 624d6e296c69b244bcede364c72ae0430ac14681
+  SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
 
-PODFILE CHECKSUM: 5d81398ca0082d94eecb93561b6f0206703c5be1
+PODFILE CHECKSUM: 61544b9cf97834bacc124df3c167a0f088b45214
 
-COCOAPODS: 1.3.1
+COCOAPODS: 1.5.3

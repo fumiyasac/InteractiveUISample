@@ -13,5 +13,5 @@ target 'InteractiveUISample' do
   pod 'SDWebImage'
 
   # UserInterface
-  pod 'FontAwesome.swift', :git => 'https://github.com/thii/FontAwesome.swift', :branch => 'swift-4.0'
+  pod 'FontAwesome.swift'
 end

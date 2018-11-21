@@ -1,6 +1,6 @@
 // FontAwesomeImageView.swift
 //
-// Copyright (c) 2017 Maik639
+// Copyright (c) 2014-present FontAwesome.swift contributors
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -22,18 +22,19 @@
 
 import UIKit
 
-@IBDesignable class FontAwesomeImageView: UIImageView {
+@IBDesignable public class FontAwesomeImageView: UIImageView {
 
-    @IBInspectable var cssCode: String = "fa-square-o"
-    @IBInspectable var imageColor: UIColor = .black
-    @IBInspectable var imageBackgroundColor: UIColor = .clear
+    @IBInspectable public var cssCode: String = "fa-font-awesome-flag"
+    @IBInspectable public var imageColor: UIColor = .black
+    @IBInspectable public var imageBackgroundColor: UIColor = .clear
+    @IBInspectable public var styleName: String = "Brands"
 
-    override func awakeFromNib() {
+    public override func awakeFromNib() {
         super.awakeFromNib()
         useFontAwesomeImage()
     }
 
-    override func prepareForInterfaceBuilder() {
+    public override func prepareForInterfaceBuilder() {
         useFontAwesomeImage()
     }
 
@@ -52,7 +53,8 @@ extension FontAwesomeImageView: FontAwesomeImageRepresentable {
     }
 
     var imageConfigs: [ImageConfig] {
-        return [(cssCode, imageColor, imageBackgroundColor)]
+        guard let style = FontAwesomeStyle(rawValue: styleName.lowercased()) else { return [] }
+        return [(cssCode, style, imageColor, imageBackgroundColor)]
     }
 
 }

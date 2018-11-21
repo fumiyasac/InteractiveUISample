@@ -41,7 +41,7 @@ extension FlipDismissCustomTransition: UIViewControllerAnimatedTransitioning {
         let containerView = transitionContext.containerView
         
         //遷移後のframe（大きさと位置）を定義する
-        let finalFrame = CGRect(x: 0, y: 0, width: CGFloat(DeviceSize.screenWidth()), height: CGFloat(DeviceSize.screenHeight()))
+        let finalFrame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
 
         //UIViewのスナップショットを取得する
         guard let snapshotView = fromViewController.view.snapshotView(afterScreenUpdates: true) else {

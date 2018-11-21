@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import InteractiveUISample
+//@testable import InteractiveUISample
 
 class InteractiveUISampleTests: XCTestCase {
     

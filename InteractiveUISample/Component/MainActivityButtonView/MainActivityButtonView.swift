@@ -50,15 +50,15 @@ class MainActivityButtonView: CustomViewBase {
         gourmentButtonWrappedView.layer.masksToBounds = true
 
         //アイコンイメージの作成
-        let plainFontImage = UIImage.fontAwesomeIcon(name: .plane, textColor: UIColor.white, size: iconImageViewSize)
+        let plainFontImage = UIImage.fontAwesomeIcon(name: .plane, style: .solid, textColor: UIColor.white, size: iconImageViewSize)
         plainButtonImage.backgroundColor = UIColor.clear
         plainButtonImage.image = plainFontImage
 
-        let travelFontImage = UIImage.fontAwesomeIcon(name: .briefcase, textColor: UIColor.white, size: iconImageViewSize)
+        let travelFontImage = UIImage.fontAwesomeIcon(name: .briefcase, style: .solid, textColor: UIColor.white, size: iconImageViewSize)
         travelButtonImage.backgroundColor = UIColor.clear
         travelButtonImage.image = travelFontImage
 
-        let gourmentFontImage = UIImage.fontAwesomeIcon(name: .spoon, textColor: UIColor.white, size: iconImageViewSize)
+        let gourmentFontImage = UIImage.fontAwesomeIcon(name: .utensilSpoon, style: .solid, textColor: UIColor.white, size: iconImageViewSize)
         gourmentButtonImage.backgroundColor = UIColor.clear
         gourmentButtonImage.image = gourmentFontImage
     }

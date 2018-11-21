@@ -17,7 +17,7 @@ class GradientHeaderView: CustomViewBase {
     @IBOutlet weak private var headerWrappedViewTopConstraint: NSLayoutConstraint!
     @IBOutlet weak private var headerTitle: UILabel!
 
-    private let defaultHeaderMargin: CGFloat = DeviceSize.sizeOfIphoneX() ? 44 : 20
+    private let defaultHeaderMargin: CGFloat = UIApplication.shared.statusBarFrame.height
 
     //MARK: - Function
 

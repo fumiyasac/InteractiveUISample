@@ -71,7 +71,6 @@
 		DEA9F5F71FCA845400F15550 /* SwipeInteractionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA9F5F61FCA845400F15550 /* SwipeInteractionController.swift */; };
 		DECCA2D31FBFDD8A00B2C470 /* MainListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECCA2D21FBFDD8A00B2C470 /* MainListPresenter.swift */; };
 		DECCA2DA1FC00A7E00B2C470 /* ArticleCustomTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECCA2D91FC00A7E00B2C470 /* ArticleCustomTransition.swift */; };
-		DECCA2DC1FC027F400B2C470 /* DeviceSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECCA2DB1FC027F400B2C470 /* DeviceSize.swift */; };
 		DECCA2DE1FC07A7F00B2C470 /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECCA2DD1FC07A7F00B2C470 /* Article.swift */; };
 		DECCA2E11FC0809B00B2C470 /* ArticleStoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECCA2DF1FC0809B00B2C470 /* ArticleStoryTableViewCell.swift */; };
 		DECCA2E21FC0809B00B2C470 /* ArticleStoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DECCA2E01FC0809B00B2C470 /* ArticleStoryTableViewCell.xib */; };
@@ -175,7 +174,6 @@
 		DEA9F5F61FCA845400F15550 /* SwipeInteractionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeInteractionController.swift; sourceTree = "<group>"; };
 		DECCA2D21FBFDD8A00B2C470 /* MainListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainListPresenter.swift; sourceTree = "<group>"; };
 		DECCA2D91FC00A7E00B2C470 /* ArticleCustomTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleCustomTransition.swift; sourceTree = "<group>"; };
-		DECCA2DB1FC027F400B2C470 /* DeviceSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceSize.swift; sourceTree = "<group>"; };
 		DECCA2DD1FC07A7F00B2C470 /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
 		DECCA2DF1FC0809B00B2C470 /* ArticleStoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleStoryTableViewCell.swift; sourceTree = "<group>"; };
 		DECCA2E01FC0809B00B2C470 /* ArticleStoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArticleStoryTableViewCell.xib; sourceTree = "<group>"; };
@@ -416,7 +414,6 @@
 			isa = PBXGroup;
 			children = (
 				DE6FE3EA1FC131A3006284CD /* APIRequestManager.swift */,
-				DECCA2DB1FC027F400B2C470 /* DeviceSize.swift */,
 			);
 			path = Module;
 			sourceTree = "<group>";
@@ -588,7 +585,6 @@
 				DEA20FD31FB824AB0003BD84 /* Frameworks */,
 				DEA20FD41FB824AB0003BD84 /* Resources */,
 				F4D146402B02A8C9E67B3F60 /* [CP] Embed Pods Frameworks */,
-				51E55B9AFFC92FA8D13E85F0 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -642,20 +638,23 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0910;
-				LastUpgradeCheck = 0910;
+				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = "酒井文也";
 				TargetAttributes = {
 					DEA20FD51FB824AB0003BD84 = {
 						CreatedOnToolsVersion = 9.1;
+						LastSwiftMigration = 1010;
 						ProvisioningStyle = Automatic;
 					};
 					DEA20FE91FB824AB0003BD84 = {
 						CreatedOnToolsVersion = 9.1;
+						LastSwiftMigration = 1010;
 						ProvisioningStyle = Automatic;
 						TestTargetID = DEA20FD51FB824AB0003BD84;
 					};
 					DEA20FF41FB824AB0003BD84 = {
 						CreatedOnToolsVersion = 9.1;
+						LastSwiftMigration = 1010;
 						ProvisioningStyle = Automatic;
 						TestTargetID = DEA20FD51FB824AB0003BD84;
 					};
@@ -724,21 +723,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		51E55B9AFFC92FA8D13E85F0 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-InteractiveUISample/Pods-InteractiveUISample-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		BD1435643963E72BE2016558 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -811,7 +795,6 @@
 				DEA210671FBA5C790003BD84 /* MainActivityViewController.swift in Sources */,
 				DEA9F5F11FCA0A3800F15550 /* FlipPresentCustomTransition.swift in Sources */,
 				DE92179F1FD05E88008261DA /* GenreDetail.swift in Sources */,
-				DECCA2DC1FC027F400B2C470 /* DeviceSize.swift in Sources */,
 				DE9217A11FD0607D008261DA /* GenrePresenter.swift in Sources */,
 				DEA210251FB9E19E0003BD84 /* ArticleHeaderView.swift in Sources */,
 				DE6FE4051FC17326006284CD /* StoryViewController.swift in Sources */,
@@ -910,6 +893,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -917,6 +901,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -967,6 +952,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -974,6 +960,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -1016,7 +1003,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.just1factory.InteractiveUISample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/InteractiveUISample/InteractiveUISample-Bridging-Header.h";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1034,7 +1021,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.just1factory.InteractiveUISample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/InteractiveUISample/InteractiveUISample-Bridging-Header.h";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -1050,7 +1037,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.just1factory.InteractiveUISampleTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/InteractiveUISample.app/InteractiveUISample";
 			};
@@ -1067,7 +1054,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.just1factory.InteractiveUISampleTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/InteractiveUISample.app/InteractiveUISample";
 			};
@@ -1083,7 +1070,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.just1factory.InteractiveUISampleUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = InteractiveUISample;
 			};
@@ -1099,7 +1086,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.just1factory.InteractiveUISampleUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = InteractiveUISample;
 			};

@@ -9,6 +9,29 @@
 			<key>orderHint</key>
 			<integer>6</integer>
 		</dict>
+		<key>InteractiveUISample.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>6</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>DEA20FD51FB824AB0003BD84</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>DEA20FE91FB824AB0003BD84</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>DEA20FF41FB824AB0003BD84</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 	</dict>
 </dict>
 </plist>

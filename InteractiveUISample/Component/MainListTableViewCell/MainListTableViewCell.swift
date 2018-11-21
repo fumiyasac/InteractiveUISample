@@ -58,14 +58,14 @@ class MainListTableViewCell: UITableViewCell {
         let titleParagraphStyle = NSMutableParagraphStyle.init()
         titleParagraphStyle.minimumLineHeight = 18
         let titleAttributedText = NSMutableAttributedString.init(string: mainList.title)
-        titleAttributedText.addAttribute(NSAttributedStringKey.paragraphStyle, value: titleParagraphStyle, range: NSMakeRange(0, titleAttributedText.length))
+        titleAttributedText.addAttribute(NSAttributedString.Key.paragraphStyle, value: titleParagraphStyle, range: NSMakeRange(0, titleAttributedText.length))
         listTitleLabel.attributedText = titleAttributedText
         
         //メインテキストの行の高さを調節する
         let mainParagraphStyle = NSMutableParagraphStyle.init()
         mainParagraphStyle.minimumLineHeight = 20
         let mainAttributedText = NSMutableAttributedString.init(string: mainList.mainText)
-        mainAttributedText.addAttribute(NSAttributedStringKey.paragraphStyle, value: mainParagraphStyle, range: NSMakeRange(0, mainAttributedText.length))
+        mainAttributedText.addAttribute(NSAttributedString.Key.paragraphStyle, value: mainParagraphStyle, range: NSMakeRange(0, mainAttributedText.length))
         listDescriptionLabel.attributedText = mainAttributedText
         
         listImageView.sd_setImage(with: URL(string: mainList.thumbnailUrl))
@@ -128,7 +128,7 @@ class MainListTableViewCell: UITableViewCell {
         listImageCategoryLabel.layer.masksToBounds = true
 
         //画像のアイコンをつける
-        creditIconImageView.image = UIImage.fontAwesomeIcon(name: .photo, textColor: ColorDefinition.navigationColor.getColor(), size: creditIconImageSize)
+        creditIconImageView.image = UIImage.fontAwesomeIcon(name: .image, style: .solid, textColor: ColorDefinition.navigationColor.getColor(), size: creditIconImageSize)
 
         //ボタンの丸みをつける
         toArticleButtonWrappedView.layer.cornerRadius = 5.0

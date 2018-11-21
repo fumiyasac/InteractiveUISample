@@ -39,14 +39,14 @@ class ArticleDescriptionTableViewCell: UITableViewCell {
         let titleParagraphStyle = NSMutableParagraphStyle.init()
         titleParagraphStyle.minimumLineHeight = 18
         let titleAttributedText = NSMutableAttributedString.init(string: article.title)
-        titleAttributedText.addAttribute(NSAttributedStringKey.paragraphStyle, value: titleParagraphStyle, range: NSMakeRange(0, titleAttributedText.length))
+        titleAttributedText.addAttribute(NSAttributedString.Key.paragraphStyle, value: titleParagraphStyle, range: NSMakeRange(0, titleAttributedText.length))
         articleTitleLabel.attributedText = titleAttributedText
 
         //メインテキストの行の高さを調節する
         let mainParagraphStyle = NSMutableParagraphStyle.init()
         mainParagraphStyle.minimumLineHeight = 20
         let mainAttributedText = NSMutableAttributedString.init(string: article.mainText)
-        mainAttributedText.addAttribute(NSAttributedStringKey.paragraphStyle, value: titleParagraphStyle, range: NSMakeRange(0, mainAttributedText.length))
+        mainAttributedText.addAttribute(NSAttributedString.Key.paragraphStyle, value: titleParagraphStyle, range: NSMakeRange(0, mainAttributedText.length))
         articleMainTextLabel.attributedText = mainAttributedText
 
         articlePublishedLabel.text = article.publishedAt
@@ -62,12 +62,12 @@ class ArticleDescriptionTableViewCell: UITableViewCell {
         self.selectionStyle = .none
 
         //作成日時のアイコン設定
-        let clockFontImage = UIImage.fontAwesomeIcon(name: .clockO, textColor: UIColor.gray, size: iconImageViewSize)
+        let clockFontImage = UIImage.fontAwesomeIcon(name: .clock, style: .solid, textColor: UIColor.gray, size: iconImageViewSize)
         articlePublishedImageView.backgroundColor = UIColor.clear
         articlePublishedImageView.image = clockFontImage
 
         //カテゴリーのアイコン設定
-        let tagFontImage = UIImage.fontAwesomeIcon(name: .tag, textColor: UIColor.gray, size: iconImageViewSize)
+        let tagFontImage = UIImage.fontAwesomeIcon(name: .tag, style: .solid, textColor: UIColor.gray, size: iconImageViewSize)
         articleCategoryImageView.backgroundColor  = UIColor.clear
         articleCategoryImageView.image  = tagFontImage
     }

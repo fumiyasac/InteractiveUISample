@@ -42,7 +42,7 @@ class StoryRelatedViewController: UIViewController {
         self.navigationController?.navigationBar.barTintColor = ColorDefinition.navigationColor.getColor()
         self.navigationController?.navigationBar.isTranslucent = false
         self.navigationController?.navigationBar.tintColor = UIColor.white
-        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor : UIColor.white]
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.white]
 
         //タイトルを入れる
         self.navigationItem.title = "関連ジャンル一覧"
@@ -53,7 +53,7 @@ class StoryRelatedViewController: UIViewController {
         storyRelatedTableView.delegate           = self
         storyRelatedTableView.dataSource         = self
         storyRelatedTableView.estimatedRowHeight = 60
-        storyRelatedTableView.rowHeight = UITableViewAutomaticDimension
+        storyRelatedTableView.rowHeight = UITableView.automaticDimension
         storyRelatedTableView.delaysContentTouches = false
 
         storyRelatedTableView.registerCustomCell(StoryRelatedTableViewCell.self)

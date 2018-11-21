@@ -30,14 +30,14 @@ class ArticleSummaryTableViewCell: UITableViewCell {
         let titleParagraphStyle = NSMutableParagraphStyle.init()
         titleParagraphStyle.minimumLineHeight = 18
         let titleAttributedText = NSMutableAttributedString.init(string: article.summaryTitle)
-        titleAttributedText.addAttribute(NSAttributedStringKey.paragraphStyle, value: titleParagraphStyle, range: NSMakeRange(0, titleAttributedText.length))
+        titleAttributedText.addAttribute(NSAttributedString.Key.paragraphStyle, value: titleParagraphStyle, range: NSMakeRange(0, titleAttributedText.length))
         articleSummaryTitleLabel.attributedText = titleAttributedText
 
         //メインテキストの行の高さを調節する
         let mainParagraphStyle = NSMutableParagraphStyle.init()
         mainParagraphStyle.minimumLineHeight = 20
         let mainAttributedText = NSMutableAttributedString.init(string: article.summaryText)
-        mainAttributedText.addAttribute(NSAttributedStringKey.paragraphStyle, value: titleParagraphStyle, range: NSMakeRange(0, mainAttributedText.length))
+        mainAttributedText.addAttribute(NSAttributedString.Key.paragraphStyle, value: titleParagraphStyle, range: NSMakeRange(0, mainAttributedText.length))
         articleSummaryTextLabel.attributedText = mainAttributedText
     }
 

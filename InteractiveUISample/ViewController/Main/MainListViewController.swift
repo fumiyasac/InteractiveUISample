@@ -43,7 +43,7 @@ class MainListViewController: UIViewController {
     private func setupMainListTableView() {
         mainListTableView.delegate   = self
         mainListTableView.dataSource = self
-        mainListTableView.rowHeight  = UITableViewAutomaticDimension
+        mainListTableView.rowHeight  = UITableView.automaticDimension
         mainListTableView.estimatedRowHeight = 307
         mainListTableView.delaysContentTouches = false
         mainListTableView.registerCustomCell(MainListTableViewCell.self)
@@ -131,10 +131,10 @@ extension MainListViewController: UITableViewDelegate, UIScrollViewDelegate {
 
         //アニメーションの作成
         let groupAnimation            = CAAnimationGroup()
-        groupAnimation.fillMode       = kCAFillModeBackwards
+        groupAnimation.fillMode       = CAMediaTimingFillMode.backwards
         groupAnimation.duration       = 0.36
         groupAnimation.beginTime      = CACurrentMediaTime() + 0.08
-        groupAnimation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseIn)
+        groupAnimation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeIn)
 
         //透過を変更するアニメーション
         let opacityAnimation       = CABasicAnimation(keyPath: "opacity")

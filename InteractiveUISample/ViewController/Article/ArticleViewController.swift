@@ -14,13 +14,25 @@ class ArticleViewController: UIViewController {
     @IBOutlet var articleTableView: UITableView!
 
     //記事上の画像ヘッダーのViewの高さ（iPhoneX用に補正あり）
-    private let articleHeaderImageViewHeight: CGFloat = DeviceSize.sizeOfIphoneX() ? 244 : 200
+    private let articleHeaderImageViewHeight: CGFloat = {
+        if UIApplication.shared.statusBarFrame.height > 20 {
+            return 244.0
+        } else {
+            return 200.0
+        }
+    }()
 
     //グラデーションヘッダー用のY軸方向の位置（iPhoneX用に補正あり）
-    private let gradientHeaderViewPositionY: CGFloat = DeviceSize.sizeOfIphoneX() ? -44 : -20
+    private let gradientHeaderViewPositionY: CGFloat = -UIApplication.shared.statusBarFrame.height
 
     //ナビゲーションバーの高さ（iPhoneX用に補正あり）
-    fileprivate let navigationBarHeight: CGFloat = DeviceSize.sizeOfIphoneX() ? 88.5 : 64.0
+    fileprivate let navigationBarHeight: CGFloat = {
+        if UIApplication.shared.statusBarFrame.height > 20 {
+            return 88.5
+        } else {
+            return 64.0
+        }
+    }()
 
     //適用するカスタムトランジションのクラス
     fileprivate let articleCustomTransition = ArticleCustomTransition()
@@ -117,7 +129,7 @@ class ArticleViewController: UIViewController {
         articleTableView.delegate           = self
         articleTableView.dataSource         = self
         articleTableView.estimatedRowHeight = 340
-        articleTableView.rowHeight = UITableViewAutomaticDimension
+        articleTableView.rowHeight = UITableView.automaticDimension
         articleTableView.delaysContentTouches = false
         articleTableView.alpha = 0
 
@@ -152,10 +164,10 @@ extension ArticleViewController: ArticlePresenterProtocol {
         let errorAlert = UIAlertController(
             title: "通信状態エラー",
             message: "データの取得に失敗しました。通信状態の良い場所ないしはお持ちのWiftに接続した状態で再度更新ボタンを押してお試し下さい。",
-            preferredStyle: UIAlertControllerStyle.alert
+            preferredStyle: UIAlertController.Style.alert
         )
         errorAlert.addAction(
-            UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil)
+            UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil)
         )
         self.present(errorAlert, animated: true, completion: {
             self.presenter.getArticle()
