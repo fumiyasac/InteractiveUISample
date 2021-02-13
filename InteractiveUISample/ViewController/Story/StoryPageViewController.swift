@@ -185,7 +185,7 @@ extension StoryPageViewController: UIPageViewControllerDelegate, UIPageViewContr
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
 
         //インデックスを取得する
-        guard let index = storyViewControllerLists.index(of: viewController as! StoryViewController) else {
+        guard let index = storyViewControllerLists.firstIndex(of: viewController as! StoryViewController) else {
             return nil
         }
 
@@ -201,7 +201,7 @@ extension StoryPageViewController: UIPageViewControllerDelegate, UIPageViewContr
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
 
         //インデックスを取得する
-        guard let index = storyViewControllerLists.index(of: viewController as! StoryViewController) else {
+        guard let index = storyViewControllerLists.firstIndex(of: viewController as! StoryViewController) else {
             return nil
         }
 

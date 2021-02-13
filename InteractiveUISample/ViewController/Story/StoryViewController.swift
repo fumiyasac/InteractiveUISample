@@ -32,6 +32,10 @@ class StoryViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ToStoryDetailViewController", let destinationViewController = segue.destination as? StoryDetailViewController {
 
+            //MEMO: InterfaceBuilder上での設定
+            //・Kind → 「Present Modally」に設定
+            //・Presntation → 「Full Screen」に設定
+            //・Transition → 「Cover Vertical」に設定
             destinationViewController.setStoryDetail(targetStory)
             destinationViewController.transitioningDelegate = self
             swipeInteractionController.wireToViewController(destinationViewController)

@@ -1,27 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="6tN-dd-Do6">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="6tN-dd-Do6">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="HiraginoKakuGothic.ttc">
-            <string>HiraginoSans-W3</string>
-            <string>HiraginoSans-W6</string>
-        </array>
-    </customFonts>
     <scenes>
         <!--Navigation Controller-->
         <scene sceneID="sw8-Ig-Vxu">
             <objects>
                 <navigationController id="6tN-dd-Do6" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Owb-j7-Mcv">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.46274509800000002" green="0.71372549019999998" blue="0.8862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
@@ -49,7 +41,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rgL-OQ-w65" userLabel="HeaderView">
-                                <rect key="frame" x="0.0" y="64" width="375" height="84"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="84"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="海のある風景には物語が絶対にある。" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eOU-hA-jPC">
                                         <rect key="frame" x="15" y="15" width="345" height="14"/>
@@ -119,12 +111,13 @@
                                 </constraints>
                             </view>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="772-TP-Ycs">
-                                <rect key="frame" x="0.0" y="148" width="375" height="519"/>
+                                <rect key="frame" x="0.0" y="128" width="375" height="539"/>
                                 <connections>
                                     <segue destination="VqV-Cf-6nS" kind="embed" id="zfg-kZ-2lv"/>
                                 </connections>
                             </containerView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="6AH-3h-Vie"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="I7Y-PK-qOj" secondAttribute="trailing" id="2bi-FL-gBA"/>
@@ -143,7 +136,6 @@
                             <constraint firstItem="6AH-3h-Vie" firstAttribute="trailing" secondItem="772-TP-Ycs" secondAttribute="trailing" id="u1S-jW-qdR"/>
                             <constraint firstItem="rgL-OQ-w65" firstAttribute="top" secondItem="6AH-3h-Vie" secondAttribute="top" id="xLG-Av-SW9"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="6AH-3h-Vie"/>
                     </view>
                     <navigationItem key="navigationItem" id="l34-Uu-9KR">
                         <barButtonItem key="leftBarButtonItem" title="Item" style="plain" id="7uJ-U5-KVb">
@@ -157,7 +149,7 @@
                             </button>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" style="plain" id="RxX-dn-Ngy">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Ybr-ys-PaM">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="Ybr-ys-PaM">
                                 <rect key="frame" x="264" y="9.5" width="95" height="25"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="13"/>
@@ -191,11 +183,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="si2-rZ-57l">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                             </tableView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="Ms1-rZ-Xtz"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="si2-rZ-57l" firstAttribute="trailing" secondItem="Ms1-rZ-Xtz" secondAttribute="trailing" id="ATR-rR-HIL"/>
@@ -203,7 +196,6 @@
                             <constraint firstItem="si2-rZ-57l" firstAttribute="leading" secondItem="Ms1-rZ-Xtz" secondAttribute="leading" id="WpE-ML-mAc"/>
                             <constraint firstItem="si2-rZ-57l" firstAttribute="top" secondItem="Ms1-rZ-Xtz" secondAttribute="top" id="fyE-gc-NgO"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="Ms1-rZ-Xtz"/>
                     </view>
                     <connections>
                         <outlet property="storyRelatedTableView" destination="si2-rZ-57l" id="lE9-wf-Ku7"/>
@@ -242,6 +234,7 @@
                                 </constraints>
                             </view>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="9EY-4c-mXL"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="nvG-g1-oUS" firstAttribute="bottom" secondItem="9EY-4c-mXL" secondAttribute="bottom" id="I13-dy-1Fx"/>
@@ -252,11 +245,10 @@
                             <constraint firstItem="nvG-g1-oUS" firstAttribute="leading" secondItem="9EY-4c-mXL" secondAttribute="leading" id="oGv-H4-ONX"/>
                             <constraint firstItem="9EY-4c-mXL" firstAttribute="trailing" secondItem="wtS-Z7-ret" secondAttribute="trailing" constant="30" id="zPb-3q-jHL"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="9EY-4c-mXL"/>
                     </view>
                     <connections>
                         <outlet property="storyCardView" destination="wtS-Z7-ret" id="rLJ-0Q-R11"/>
-                        <segue destination="OHZ-Ml-XFK" kind="presentation" identifier="ToStoryDetailViewController" id="W5Z-p2-egb"/>
+                        <segue destination="OHZ-Ml-XFK" kind="presentation" identifier="ToStoryDetailViewController" modalPresentationStyle="fullScreen" modalTransitionStyle="coverVertical" id="W5Z-p2-egb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Odg-cT-DcK" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -275,7 +267,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JkW-DF-my7" userLabel="HeaderWrappedView">
-                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0I5-X9-p4P">
                                         <rect key="frame" x="8" y="0.0" width="104" height="44"/>
@@ -321,7 +313,7 @@
                                                     <constraint firstItem="26d-gV-x3b" firstAttribute="leading" secondItem="zMB-t3-Gxu" secondAttribute="leading" id="ZNC-RS-uN3"/>
                                                 </constraints>
                                             </stackView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mrC-o6-uo8">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mrC-o6-uo8">
                                                 <rect key="frame" x="0.0" y="0.0" width="104" height="44"/>
                                             </button>
                                         </subviews>
@@ -411,6 +403,7 @@
                                 </constraints>
                             </view>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="6gZ-Bd-klJ"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="7ed-xI-TaV" firstAttribute="leading" secondItem="6gZ-Bd-klJ" secondAttribute="leading" id="27b-oi-Vpq"/>
@@ -424,7 +417,6 @@
                             <constraint firstItem="7ed-xI-TaV" firstAttribute="trailing" secondItem="6gZ-Bd-klJ" secondAttribute="trailing" id="ssF-b7-q4z"/>
                             <constraint firstItem="JkW-DF-my7" firstAttribute="leading" secondItem="6gZ-Bd-klJ" secondAttribute="leading" id="x5U-Xl-quB"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="6gZ-Bd-klJ"/>
                     </view>
                     <connections>
                         <outlet property="storyDetailBackButton" destination="mrC-o6-uo8" id="zvr-SS-8NA"/>
@@ -462,7 +454,7 @@
                                 </constraints>
                             </scrollView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c6d-5Q-eAB" userLabel="HeaderWrappedView">
-                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Ee-vc-hbn">
                                         <rect key="frame" x="8" y="0.0" width="90" height="44"/>
@@ -493,7 +485,7 @@
                                                     <constraint firstAttribute="height" constant="44" id="NLr-hA-no9"/>
                                                 </constraints>
                                             </stackView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hcB-oh-txJ">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hcB-oh-txJ">
                                                 <rect key="frame" x="0.0" y="0.0" width="90" height="44"/>
                                             </button>
                                         </subviews>
@@ -520,6 +512,7 @@
                                 </constraints>
                             </view>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="kHi-k1-IZx"/>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="UNv-TL-eBN" firstAttribute="bottom" secondItem="aFq-pN-pEm" secondAttribute="bottom" id="0TW-OR-m1B"/>
@@ -530,7 +523,6 @@
                             <constraint firstItem="c6d-5Q-eAB" firstAttribute="leading" secondItem="kHi-k1-IZx" secondAttribute="leading" id="cZO-vD-Xg1"/>
                             <constraint firstAttribute="trailing" secondItem="c6d-5Q-eAB" secondAttribute="trailing" id="m9L-hS-RWM"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="kHi-k1-IZx"/>
                     </view>
                     <connections>
                         <outlet property="storyPictureCloseButton" destination="hcB-oh-txJ" id="HM7-DA-9E8"/>
