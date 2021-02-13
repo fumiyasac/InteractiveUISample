@@ -1,6 +1,15 @@
 PODS:
-  - Alamofire (4.9.1)
+  - Alamofire (5.4.1)
   - FontAwesome.swift (1.9.1)
+  - PromiseKit (6.13.1):
+    - PromiseKit/CorePromise (= 6.13.1)
+    - PromiseKit/Foundation (= 6.13.1)
+    - PromiseKit/UIKit (= 6.13.1)
+  - PromiseKit/CorePromise (6.13.1)
+  - PromiseKit/Foundation (6.13.1):
+    - PromiseKit/CorePromise
+  - PromiseKit/UIKit (6.13.1):
+    - PromiseKit/CorePromise
   - SDWebImage (5.10.4):
     - SDWebImage/Core (= 5.10.4)
   - SDWebImage/Core (5.10.4)
@@ -9,6 +18,7 @@ PODS:
 DEPENDENCIES:
   - Alamofire
   - FontAwesome.swift
+  - PromiseKit
   - SDWebImage
   - SwiftyJSON
 
@@ -16,15 +26,17 @@ SPEC REPOS:
   trunk:
     - Alamofire
     - FontAwesome.swift
+    - PromiseKit
     - SDWebImage
     - SwiftyJSON
 
 SPEC CHECKSUMS:
-  Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
+  Alamofire: 2291f7d21ca607c491dd17642e5d40fdcda0e65c
   FontAwesome.swift: 6b52cb7be66eacd28cbfaa0ca7ffd0de4a186a1d
+  PromiseKit: 28fda91c973cc377875d8c0ea4f973013c05b6db
   SDWebImage: c666b97e1fa9c64b4909816a903322018f0a9c84
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
 
-PODFILE CHECKSUM: 61544b9cf97834bacc124df3c167a0f088b45214
+PODFILE CHECKSUM: 5afc5bb2eeb4224e0be5fa731d3e5fcc7d76dd32
 
 COCOAPODS: 1.10.0

@@ -30,18 +30,15 @@ class ArticlePresenter {
     //サンプル記事データを取得する
     func getArticle() {
         let apiRequestManager = APIRequestManager(endPoint: "article.json", method: .get)
-        apiRequestManager.request(
-            success: { (data: Dictionary) in
-                let article = Article.init(json: JSON(data))
-
+        apiRequestManager.request()
+            .done { json in
                 //通信成功時の処理をプロトコルを適用したViewController側で行う
+                let article = Article.init(json: json)
                 self.presenter.showArticle(article)
-            },
-            fail: { (error: Error?) in
-
+            }
+            .catch { _ in
                 //通信失敗時の処理をプロトコルを適用したViewController側で行う
                 self.presenter.hideArticle()
             }
-        )
     }
 }
