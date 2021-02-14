@@ -3,7 +3,7 @@
 
 UIのスクロールやタブUIの切り替えを伴うようなコンテンツにて動きの中でポイントとなりそうな部分にアニメーション不自然にならない心地よいタイミングでに盛り込むプラクティスをするために作成したサンプルになります。
 
-### 実装機能一覧
+## 実装機能一覧
 
 今回のサンプルに関しては、主に下記の6つの機能についてを実装しています。
 
@@ -22,39 +22,41 @@ UIのスクロールやタブUIの切り替えを伴うようなコンテンツ�
 
 ※ その他残りのアニメーションを伴うコンテンツ画面に関しては随時追加予定です。
 
-### 本サンプルの画面キャプチャ
+## 本サンプルの画面キャプチャ
 
-#### 画面キャプチャその1
+### 画面キャプチャその1
 
 ![今回のサンプルの画面一覧その1](https://qiita-image-store.s3.amazonaws.com/0/17400/ce8aa298-ad3a-7a8d-0999-b9b5c7c99327.jpeg)
 
-#### 画面キャプチャその2
+### 画面キャプチャその2
 
 ![今回のサンプルの画面一覧その2](https://qiita-image-store.s3.amazonaws.com/0/17400/944d1fa7-2ef3-1fb2-a4c7-eca8387bdbb3.jpeg)
 
-#### 画面キャプチャその3
+### 画面キャプチャその3
 
 ![今回のサンプルの画面一覧その3](https://camo.qiitausercontent.com/1c23f60a0dd284b5415206c02595da3e85afca89/68747470733a2f2f71696974612d696d6167652d73746f72652e73332e616d617a6f6e6177732e636f6d2f302f31373430302f63313034663336382d306666312d373631312d363666312d6435363866326665613266662e6a706567)
 
-#### 画面キャプチャその4
+### 画面キャプチャその4
 
 ![今回のサンプルの画面一覧その4](https://camo.qiitausercontent.com/2aab7fb2fa280dd02fef162361c9d3b1029bafd2/68747470733a2f2f71696974612d696d6167652d73746f72652e73332e616d617a6f6e6177732e636f6d2f302f31373430302f34666464346238302d626439302d303338302d363163332d6339333530626134346138352e6a706567)
 
-#### Storyboardの構成①：メイン部分
+## InterfaceBuilder構造における図解
+
+### Storyboardの構成①：メイン部分
 
 ![Storyboardの構成：その1](https://qiita-image-store.s3.amazonaws.com/0/17400/7fc74554-715e-6848-ee1e-05920d147395.jpeg)
 
-#### Storyboardの構成②：ストーリー部分
+### Storyboardの構成②：ストーリー部分
 
 ![Storyboardの構成：その2](https://camo.qiitausercontent.com/34ce33eb37cd876f55d5e7f3559f1043cf74bc57/68747470733a2f2f71696974612d696d6167652d73746f72652e73332e616d617a6f6e6177732e636f6d2f302f31373430302f37333331633464302d323535632d363762342d323062642d3666613139363465613339342e6a706567)
 
-#### MVP Pattern
+## MVP Pattern
 
 ![MVP Pattern](https://camo.qiitausercontent.com/59f931dba80c900f9fd99cf890ff16558bac950f/68747470733a2f2f71696974612d696d6167652d73746f72652e73332e616d617a6f6e6177732e636f6d2f302f31373430302f33633439646462372d313763612d636333342d306230312d3666383265316463653134642e6a706567)
 
-### 設計の重要ポイントになる部分
+## UI実装設計の重要ポイントになる部分
 
-#### パララックス(視差効果)表現とフェードするアニメーションを組み合わせたアニメーション実装
+### 1. パララックス(視差効果)表現とフェードするアニメーションを組み合わせたアニメーション実装
 
 ![パララックス(視差効果)表現とフェードするアニメーションを組み合わせたアニメーション実装](https://camo.qiitausercontent.com/634c65258dd35010ae4fe25699c97c74c86dbde7/68747470733a2f2f71696974612d696d6167652d73746f72652e73332e616d617a6f6e6177732e636f6d2f302f31373430302f65616138383737622d613862342d653436312d396465332d6136633636323531623134362e6a706567)
 
@@ -63,7 +65,7 @@ __動きの仕様メモ：__
 1. AutoLayoutのConstraintの変更を利用した画像のパララックス(視差効果)アニメーション
 2. 表示するタイミングでのセル自体のアルファ値を変更するCoreAnimation
 
-#### スクロールの変化量に応じてヘッダー画像とナビゲーションを変化させるアニメーション実装
+### 2. スクロールの変化量に応じてヘッダー画像とナビゲーションを変化させるアニメーション実装
 
 ![スクロールの変化量に応じてヘッダー画像とナビゲーションを変化させる](https://camo.qiitausercontent.com/fdfc3f6dd3103e5f0b541467c3c6ec8c8e6dd512/68747470733a2f2f71696974612d696d6167652d73746f72652e73332e616d617a6f6e6177732e636f6d2f302f31373430302f37343665366233322d333231622d653638382d633261322d6537326133643038306666372e6a706567)
 
@@ -73,15 +75,23 @@ __動きの仕様メモ：__
 2. コンテンツが一番上にある状態で上にスクロールをすると、ヘッダー画像がずれながらダミーのヘッダーが徐々に現れる。（背景のアルファ値が1に近づきながら、タイトルと戻るボタンが下から徐々に現れる）
 3. ヘッダー画像が完全に隠れたら、タイトルと戻るボタンは現れたままの状態になり、更に上へスクロールを続けても位置はそのまま固定されている。
 
-#### カスタムトランジションとアファイン変換を活用した3D回転のような画面遷移に関する解説
+### 3. カスタムトランジションとアファイン変換を活用した3D回転のような画面遷移に関する解説
 
 ![3D回転のような画面遷移をするためのカスタムトランジションの設定](https://camo.qiitausercontent.com/9a0968ec67c82fa191aa81f9c889f7e8993e9ed9/68747470733a2f2f71696974612d696d6167652d73746f72652e73332e616d617a6f6e6177732e636f6d2f302f31373430302f35313438633563322d643537622d363935362d393739372d6335306537353361636134342e6a706567)
 
-#### iPhoneXのSafeAreaの考慮と調整について
+__iOS13以降のOSに対応するための変更点：__
+
+`StoryViewController.swift`に対応するInterfaceBuilder上に設定したModal遷移のSegueは下記の様に設定しています。
+
+- Kind → 「Present Modally」に設定
+- Presntation → 「Full Screen」に設定
+- Transition → 「Cover Vertical」に設定
+
+### 4. iPhoneXのSafeAreaの考慮と調整について
 
 ![iPhoneXのSafeAreaの考慮と調整について](https://camo.qiitausercontent.com/67cb94f05472ac138564fe8eb881fde5e96993b0/68747470733a2f2f71696974612d696d6167652d73746f72652e73332e616d617a6f6e6177732e636f6d2f302f31373430302f36313736613764662d623834352d383835392d383337322d3566303431356130636235392e6a706567)
 
-### (補足1)UIScrollViewの活用
+### 5. UIScrollViewの活用
 
 #### UIScrollViewとContainerViewを組み合わせてタブメニューUIを作成する
 
@@ -91,7 +101,7 @@ __動きの仕様メモ：__
 
 ![ScrollViewを利用して複雑なレイアウトを作成する](https://camo.qiitausercontent.com/ac54f123fa2c21b43a711009244713dcbe033576/68747470733a2f2f71696974612d696d6167652d73746f72652e73332e616d617a6f6e6177732e636f6d2f302f31373430302f36356231326236622d653739362d343236642d343731332d3830633431306563316337312e6a706567)
 
-### (補足2)UITableViewの表現
+### 6. UITableViewの表現
 
 #### アコーディオンのようにコンテンツを開閉して表示するUITableView
 
@@ -103,14 +113,77 @@ __動きの仕様メモ：__
 2. セクションごとの更新は`storyRelatedTableView.reloadSections(NSIndexSet(index: section) as IndexSet, with: .automatic`)で行う
 3. セルに表示するデータと表示・非表示の管理は`sectionStateLists: [(extended: Bool, genre: Genre)]`が行う。
 
-### 使用ライブラリ
+### 7. その他UI表現に関する設定
+
+細かな点になりますが、iOS13以降で改めて必要となった変更点についてのメモになります。
+
+__従来通りのModal表示をするための追加対応 ※iOS13以上：__
+
+※ 特にカスタムトランジションを伴う部分でこの実装を忘れてしまうと、画面遷移に不具合が発生する場合があります。
+
+```swift
+//カスタムトランジションのプロトコルを適用させる
+let navigationController = UINavigationController(rootViewController: storyPageViewController)
+navigationController.transitioningDelegate = self
+
+//Modalの画面遷移を実行する
+//MEMO: iOS13以降のPresent/Dismiss時の調整
+//Present/Dismissで実行するカスタムトランジションの場合ではこの設定を忘れると画面遷移がおかしくなるので注意
+if #available(iOS 13.0, *) {
+    navigationController.modalPresentationStyle = .fullScreen
+}
+self.present(navigationController, animated: true, completion: nil)
+```
+
+__UINavigationBarにおけるBackButton長押しの無効化 ※iOS14以上：__
+
+※ UIBarButtonItemを継承したクラスを用意し、長押しメニューのsetter部分を空にしてしまう形に変更します。
+
+```swift
+//UIViewControllerの拡張
+extension UIViewController {
+
+    //戻るボタンの「戻る」テキストを削除した状態にするメソッド
+    func removeBackButtonText() {
+        let backButtonItem = BackBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        self.navigationController!.navigationBar.tintColor = UIColor.white
+        self.navigationItem.backBarButtonItem = backButtonItem
+    }
+}
+
+class BackBarButtonItem: UIBarButtonItem {
+    @available(iOS 14.0, *)
+    override var menu: UIMenu? {
+        set {
+            //MEMO: 長押しメニューを消去する
+            //Do Nothing.
+        }
+        get {
+            return super.menu
+        }
+    }
+}
+```
+
+## 使用ライブラリ
 
 UIまわりの実装と直接関係のない部分に関しては、下記のライブラリを使用しました。
 
-+ [SwiftyJSON（JSONデータの解析をしやすくする）](https://github.com/SwiftyJSON/SwiftyJSON)
-+ [Alamofire（HTTPないしはHTTPSのネットワーク通信用）](https://github.com/Alamofire/Alamofire)
-+ [SDWebImage（画像URLからの非同期での画像表示とキャッシュサポート）](https://github.com/rs/SDWebImage)
-+ [FontAwesome.swift（「Font Awesome」アイコンの利用）](https://github.com/thii/FontAwesome.swift)
+| ライブラリ名 | 当該ライブラリの用途 |
+| :--- | :--- |
+| [SwiftyJSON](https://github.com/SwiftyJSON/SwiftyJSON) | JSONデータの解析をしやすくする |
+| [Alamofire](https://github.com/Alamofire/Alamofire) | HTTP/HTTPSのネットワーク通信用 |
+| [SDWebImage](https://github.com/rs/SDWebImage) | 画像URLからの非同期での画像表示とキャッシュサポート |
+| [FontAwesome.swift](https://github.com/thii/FontAwesome.swift) | 「Font Awesome」アイコンの利用 |
+| [PromiseKit](https://github.com/mxcl/PromiseKit) | APIリクエスト送信＆レスポンス取得の非同期処理ハンドリング |
+
+__補足事項：__
+
+1. AlamofireについてはVer5.x系からは実装方法が大きく変化があった部分になります。
+  → [Alamofire 5 Tutorial for iOS: Getting Started](https://www.raywenderlich.com/6587213-alamofire-5-tutorial-for-ios-getting-started)
+2. API通信処理部分における`Success(成功)`＆`Failure(失敗)`時のハンドリング処理部分にはPromiseKitを利用してPresenter側でも処理がわかりやすくなる様にしています。
+
+## 解説記事
 
 このサンプル全体の詳細解説とポイントをまとめたものは下記に掲載しております。
 
