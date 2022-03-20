@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1005A6D3698C8EE6236BB876 /* Pods_InteractiveUISample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0498819E4D2D94EFBDF29869 /* Pods_InteractiveUISample.framework */; };
+		DE04BC3627E77D3800369048 /* UIDeviceExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE04BC3527E77D3800369048 /* UIDeviceExtension.swift */; };
 		DE694DD91FC1A98100B4F9DA /* MainActivityNewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE694DD71FC1A98100B4F9DA /* MainActivityNewsTableViewCell.swift */; };
 		DE694DDA1FC1A98100B4F9DA /* MainActivityNewsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE694DD81FC1A98100B4F9DA /* MainActivityNewsTableViewCell.xib */; };
 		DE694DDC1FC1AC0D00B4F9DA /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE694DDB1FC1AC0D00B4F9DA /* News.swift */; };
@@ -104,6 +105,7 @@
 		0498819E4D2D94EFBDF29869 /* Pods_InteractiveUISample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InteractiveUISample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		69BE0BA31974C6B88357586E /* Pods-InteractiveUISample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InteractiveUISample.release.xcconfig"; path = "Pods/Target Support Files/Pods-InteractiveUISample/Pods-InteractiveUISample.release.xcconfig"; sourceTree = "<group>"; };
 		D86E614D216A15A4F785033C /* Pods-InteractiveUISample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InteractiveUISample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-InteractiveUISample/Pods-InteractiveUISample.debug.xcconfig"; sourceTree = "<group>"; };
+		DE04BC3527E77D3800369048 /* UIDeviceExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIDeviceExtension.swift; sourceTree = "<group>"; };
 		DE694DD71FC1A98100B4F9DA /* MainActivityNewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainActivityNewsTableViewCell.swift; sourceTree = "<group>"; };
 		DE694DD81FC1A98100B4F9DA /* MainActivityNewsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainActivityNewsTableViewCell.xib; sourceTree = "<group>"; };
 		DE694DDB1FC1AC0D00B4F9DA /* News.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
@@ -398,6 +400,7 @@
 				DE830D9B1FCAF45600DE199D /* UIImageExtension.swift */,
 				DEA210191FB9D76F0003BD84 /* UITableViewExtension.swift */,
 				DE830D931FCAB8E400DE199D /* UIViewControllerExtension.swift */,
+				DE04BC3527E77D3800369048 /* UIDeviceExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -813,6 +816,7 @@
 				DE92179D1FD05E7A008261DA /* Genre.swift in Sources */,
 				DEA9F5EF1FC95FB500F15550 /* StoryCardView.swift in Sources */,
 				DEF46C3A1FCC75B800FF5949 /* StoryRelatedTableViewCell.swift in Sources */,
+				DE04BC3627E77D3800369048 /* UIDeviceExtension.swift in Sources */,
 				DEA2107F1FBAA65A0003BD84 /* ArticleSummaryTableViewCell.swift in Sources */,
 				DEA210841FBAA69D0003BD84 /* MainListTableViewCell.swift in Sources */,
 				DE6FE4071FC17339006284CD /* StoryDetailViewController.swift in Sources */,
@@ -931,7 +935,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -985,7 +989,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -1002,7 +1006,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = S5BF5553KY;
 				INFOPLIST_FILE = InteractiveUISample/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.just1factory.InteractiveUISample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1020,7 +1024,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = S5BF5553KY;
 				INFOPLIST_FILE = InteractiveUISample/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.just1factory.InteractiveUISample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
