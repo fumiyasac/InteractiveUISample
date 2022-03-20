@@ -98,10 +98,30 @@ class ArticleViewController: UIViewController {
     private func setupNavigationBar() {
 
         //NavigationControllerのカスタマイズを行う
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        self.navigationController?.navigationBar.shadowImage = UIImage()
-        self.navigationController?.navigationBar.tintColor = UIColor.white
-        self.navigationItem.hidesBackButton = true
+        if #available(iOS 15.0, *) {
+            // MEMO: iOS14以前で実施していた調整をiOS15で実施する場合には、
+            // self.navigationController?.navigationBar → cで設定していく方針を取ることになります。
+            // ※ navigationBarAppearanceでは便利なプロパティも増えています。
+            let navigationBarAppearance = UINavigationBarAppearance()
+            navigationBarAppearance.configureWithOpaqueBackground()
+            navigationBarAppearance.titleTextAttributes = [
+                NSAttributedString.Key.font : UIFont(name: "HelveticaNeue-Bold", size: 14.0)!,
+                NSAttributedString.Key.foregroundColor : UIColor.clear
+            ]
+            navigationBarAppearance.backgroundColor = UIColor.clear
+            navigationBarAppearance.shadowColor = UIColor.clear
+            navigationBarAppearance.shadowImage = UIImage()
+
+            UINavigationBar.appearance().isTranslucent = true
+            UINavigationBar.appearance().standardAppearance = navigationBarAppearance
+            UINavigationBar.appearance().scrollEdgeAppearance = navigationBarAppearance
+        } else {
+            self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+            self.navigationController?.navigationBar.shadowImage = UIImage()
+            self.navigationController?.navigationBar.tintColor = UIColor.white
+            self.navigationItem.hidesBackButton = true
+
+        }
     }
 
     //ダミーのヘッダービューに関するセッティングを行うメソッド
