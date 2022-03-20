@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import SwiftyJSON
 
-protocol ArticlePresenterProtocol: class {
+protocol ArticlePresenterProtocol: AnyObject {
     func showArticle(_ article: Article)
     func hideArticle()
 }

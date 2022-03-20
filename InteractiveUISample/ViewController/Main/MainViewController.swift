@@ -12,10 +12,10 @@ class MainViewController: UIViewController {
     @IBOutlet weak var contentsScrollView: UIScrollView!
 
     //ナビゲーション用のScrollViewの中に入れる動く下線用のView
-    fileprivate var bottomLineView: UIView = UIView()
+    private var bottomLineView: UIView = UIView()
 
     //ナビゲーション用のScrollViewの中に入れる動く下線用のViewの高さ
-    fileprivate let navigationBottomLinePositionHeight: Int = 2
+    private let navigationBottomLinePositionHeight: Int = 2
 
     //ナビゲーションのボタン名
     private let navigationNameList: [String] = ["新着特集", "コンテンツ紹介"]
@@ -162,7 +162,7 @@ extension MainViewController: UIScrollViewDelegate {
     }
 
     //ナビゲーション用のScrollViewの中に入れる動く下線を所定位置まで動かす
-    fileprivate func animateBottomLineView(_ page: Double, actionIdentifier: ActionIdentifier) {
+    private func animateBottomLineView(_ page: Double, actionIdentifier: ActionIdentifier) {
         let navigationScrollViewWidth = Int(navigationScrollView.frame.width)
         let navigationScrollViewHeight = Int(navigationScrollView.frame.height)
 
@@ -180,7 +180,7 @@ extension MainViewController: UIScrollViewDelegate {
     }
 
     //コンテンツ用のScrollViewを所定位置まで動かす
-    fileprivate func animateContentScrollView(_ page: Int) {
+    private func animateContentScrollView(_ page: Int) {
         UIView.animate(withDuration: 0.26, animations: {
             self.contentsScrollView.contentOffset = CGPoint(
                 x: Int(self.contentsScrollView.frame.width) * page,

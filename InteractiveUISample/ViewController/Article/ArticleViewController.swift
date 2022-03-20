@@ -15,7 +15,7 @@ class ArticleViewController: UIViewController {
 
     //記事上の画像ヘッダーのViewの高さ（iPhoneX用に補正あり）
     private let articleHeaderImageViewHeight: CGFloat = {
-        if UIApplication.shared.statusBarFrame.height > 20 {
+        if UIDevice.current.hasNotch() {
             return 244.0
         } else {
             return 200.0
@@ -23,11 +23,15 @@ class ArticleViewController: UIViewController {
     }()
 
     //グラデーションヘッダー用のY軸方向の位置（iPhoneX用に補正あり）
-    private let gradientHeaderViewPositionY: CGFloat = -UIApplication.shared.statusBarFrame.height
+    private let gradientHeaderViewPositionY: CGFloat = {
+        let window = UIApplication.shared.windows.filter { $0.isKeyWindow }.first
+        let statusBarHeight = window?.windowScene?.statusBarManager?.statusBarFrame.height ?? 0
+        return -statusBarHeight
+    }()
 
     //ナビゲーションバーの高さ（iPhoneX用に補正あり）
-    fileprivate let navigationBarHeight: CGFloat = {
-        if UIApplication.shared.statusBarFrame.height > 20 {
+    private let navigationBarHeight: CGFloat = {
+        if UIDevice.current.hasNotch() {
             return 88.5
         } else {
             return 64.0
@@ -35,14 +39,14 @@ class ArticleViewController: UIViewController {
     }()
 
     //適用するカスタムトランジションのクラス
-    fileprivate let articleCustomTransition = ArticleCustomTransition()
+    private let articleCustomTransition = ArticleCustomTransition()
 
     //記事上の画像ヘッダーおよびナビゲーションバーのインスタンス作成
-    fileprivate var gradientHeaderView: GradientHeaderView = GradientHeaderView()
-    fileprivate var articleHeaderView: ArticleHeaderView = ArticleHeaderView()
+    private var gradientHeaderView: GradientHeaderView = GradientHeaderView()
+    private var articleHeaderView: ArticleHeaderView = ArticleHeaderView()
 
     //記事コンテンツを格納するための変数
-    fileprivate var articleContents: [Article] = [] {
+    private var articleContents: [Article] = [] {
         didSet {
             self.articleTableView.reloadData()
             if let article = self.articleContents.first {
@@ -53,10 +57,10 @@ class ArticleViewController: UIViewController {
     }
 
     //ArticlePresenterに設定したプロトコルを適用するための変数
-    fileprivate var presenter: ArticlePresenter!
+    private var presenter: ArticlePresenter!
 
     //表示するセルの定義を設定したEnum
-    fileprivate enum CellType: Int {
+    private enum CellType: Int {
         case articleCounter     = 0
         case articleDescription = 1
         case articleStory       = 2
@@ -100,7 +104,7 @@ class ArticleViewController: UIViewController {
         //NavigationControllerのカスタマイズを行う
         if #available(iOS 15.0, *) {
             // MEMO: iOS14以前で実施していた調整をiOS15で実施する場合には、
-            // self.navigationController?.navigationBar → cで設定していく方針を取ることになります。
+            // self.navigationController?.navigationBar → navigationBarAppearanceで設定していく方針を取ることになります。
             // ※ navigationBarAppearanceでは便利なプロパティも増えています。
             let navigationBarAppearance = UINavigationBarAppearance()
             navigationBarAppearance.configureWithOpaqueBackground()

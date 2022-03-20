@@ -16,10 +16,10 @@ class StoryRelatedViewController: UIViewController {
     private let storyRelatedHeaderViewHeight: CGFloat = 60.0
 
     //セクションごとに分けられたジャンルデータを格納する変数
-    fileprivate var sectionStateLists: [(extended: Bool, genre: Genre)] = []
+    private var sectionStateLists: [(extended: Bool, genre: Genre)] = []
 
     //GenrePresenterに設定したプロトコルを適用するための変数
-    fileprivate var presenter: GenrePresenter!
+    private var presenter: GenrePresenter!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,11 +38,23 @@ class StoryRelatedViewController: UIViewController {
     //この画面のナビゲーションバーの設定
     private func setupNavigationBar() {
 
-        //NavigationControllerのデザイン調整を行う
-        self.navigationController?.navigationBar.barTintColor = ColorDefinition.navigationColor.getColor()
-        self.navigationController?.navigationBar.isTranslucent = false
-        self.navigationController?.navigationBar.tintColor = UIColor.white
-        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.white]
+        // MEMO: 遷移元となるArticleViewControllerでUINavigationBarで変更を加えてしまっているので、この部分で元の設定を再度適用する
+        if #available(iOS 15.0, *) {
+            let navigationBarAppearance = UINavigationBarAppearance()
+            navigationBarAppearance.configureWithOpaqueBackground()
+            navigationBarAppearance.titleTextAttributes = [
+                NSAttributedString.Key.font : UIFont(name: "HelveticaNeue-Bold", size: 14.0)!,
+                NSAttributedString.Key.foregroundColor : UIColor.white
+            ]
+            navigationBarAppearance.backgroundColor = UIColor(code: "#76b6e2")
+            UINavigationBar.appearance().standardAppearance = navigationBarAppearance
+            UINavigationBar.appearance().scrollEdgeAppearance = navigationBarAppearance
+        } else {
+            self.navigationController?.navigationBar.barTintColor = ColorDefinition.navigationColor.getColor()
+            self.navigationController?.navigationBar.isTranslucent = false
+            self.navigationController?.navigationBar.tintColor = UIColor.white
+            self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.white]
+        }
 
         //タイトルを入れる
         self.navigationItem.title = "関連ジャンル一覧"

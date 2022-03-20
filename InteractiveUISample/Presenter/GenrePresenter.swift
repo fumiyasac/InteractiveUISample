@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-protocol GenrePresenterProtocol: class {
+protocol GenrePresenterProtocol: AnyObject {
     func showGenreList(_ genre: [Genre])
 }
 

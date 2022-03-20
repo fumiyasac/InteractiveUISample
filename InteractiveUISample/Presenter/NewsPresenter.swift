@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-protocol NewsPresenterProtocol: class {
+protocol NewsPresenterProtocol: AnyObject {
     func showNews(_ news: [News])
 }
 

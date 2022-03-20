@@ -1,19 +1,19 @@
 PODS:
-  - Alamofire (5.4.1)
+  - Alamofire (5.5.0)
   - FontAwesome.swift (1.9.1)
-  - PromiseKit (6.13.1):
-    - PromiseKit/CorePromise (= 6.13.1)
-    - PromiseKit/Foundation (= 6.13.1)
-    - PromiseKit/UIKit (= 6.13.1)
-  - PromiseKit/CorePromise (6.13.1)
-  - PromiseKit/Foundation (6.13.1):
+  - PromiseKit (6.17.0):
+    - PromiseKit/CorePromise (= 6.17.0)
+    - PromiseKit/Foundation (= 6.17.0)
+    - PromiseKit/UIKit (= 6.17.0)
+  - PromiseKit/CorePromise (6.17.0)
+  - PromiseKit/Foundation (6.17.0):
     - PromiseKit/CorePromise
-  - PromiseKit/UIKit (6.13.1):
+  - PromiseKit/UIKit (6.17.0):
     - PromiseKit/CorePromise
-  - SDWebImage (5.10.4):
-    - SDWebImage/Core (= 5.10.4)
-  - SDWebImage/Core (5.10.4)
-  - SwiftyJSON (5.0.0)
+  - SDWebImage (5.12.5):
+    - SDWebImage/Core (= 5.12.5)
+  - SDWebImage/Core (5.12.5)
+  - SwiftyJSON (5.0.1)
 
 DEPENDENCIES:
   - Alamofire
@@ -31,12 +31,12 @@ SPEC REPOS:
     - SwiftyJSON
 
 SPEC CHECKSUMS:
-  Alamofire: 2291f7d21ca607c491dd17642e5d40fdcda0e65c
+  Alamofire: 1c4fb5369c3fe93d2857c780d8bbe09f06f97e7c
   FontAwesome.swift: 6b52cb7be66eacd28cbfaa0ca7ffd0de4a186a1d
-  PromiseKit: 28fda91c973cc377875d8c0ea4f973013c05b6db
-  SDWebImage: c666b97e1fa9c64b4909816a903322018f0a9c84
-  SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
+  PromiseKit: 996202d4cae72b7801b312abef4cd2f995b2978a
+  SDWebImage: 0905f1b7760fc8ac4198cae0036600d67478751e
+  SwiftyJSON: 2f33a42c6fbc52764d96f13368585094bfd8aa5e
 
-PODFILE CHECKSUM: 5afc5bb2eeb4224e0be5fa731d3e5fcc7d76dd32
+PODFILE CHECKSUM: 62468bd2a35d80c23e6d14c25f9d8d05164a66b4
 
-COCOAPODS: 1.10.0
+COCOAPODS: 1.10.1

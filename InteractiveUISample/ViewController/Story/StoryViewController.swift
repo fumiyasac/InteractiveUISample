@@ -14,11 +14,11 @@ class StoryViewController: UIViewController {
     @IBOutlet weak var storyCardView: StoryCardView!
 
     //適用するカスタムトランジションのクラス
-    fileprivate let flipPresentCustomTransition = FlipPresentCustomTransition()
-    fileprivate let flipDismissCustomTransition = FlipDismissCustomTransition()
+    private let flipPresentCustomTransition = FlipPresentCustomTransition()
+    private let flipDismissCustomTransition = FlipDismissCustomTransition()
 
     //スワイプアクションに関するControllerのインスタンス
-    fileprivate let swipeInteractionController = SwipeInteractionController()
+    private let swipeInteractionController = SwipeInteractionController()
 
     //表示対象のストーリーデータを格納する変数
     private var targetStory: Story!

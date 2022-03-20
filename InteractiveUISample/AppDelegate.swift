@@ -54,14 +54,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if #available(iOS 15.0, *) {
             let navigationBarAppearance = UINavigationBarAppearance()
             navigationBarAppearance.configureWithOpaqueBackground()
-
-            // MEMO: UINavigationBar内部におけるタイトル文字の装飾設定
             navigationBarAppearance.titleTextAttributes = [
                 NSAttributedString.Key.font : UIFont(name: "HelveticaNeue-Bold", size: 14.0)!,
                 NSAttributedString.Key.foregroundColor : UIColor.white
             ]
-
-            // MEMO: UINavigationBar背景色の装飾設定
             navigationBarAppearance.backgroundColor = UIColor(code: "#76b6e2")
 
             UINavigationBar.appearance().standardAppearance = navigationBarAppearance

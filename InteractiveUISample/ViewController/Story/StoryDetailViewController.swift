@@ -24,14 +24,14 @@ class StoryDetailViewController: UIViewController {
     private let gradientLayer: CAGradientLayer = CAGradientLayer()
 
     //写真コンテンツを格納するための変数
-    fileprivate var photoContents: [Photo] = [] {
+    private var photoContents: [Photo] = [] {
         didSet {
             self.storyDetailPhotoCollectionView.reloadData()
         }
     }
 
     //PhotoPresenterに設定したプロトコルを適用するための変数
-    fileprivate var presenter: PhotoPresenter!
+    private var presenter: PhotoPresenter!
 
     //詳細表示用のデータを格納するための変数
     private var targetMainText: String!

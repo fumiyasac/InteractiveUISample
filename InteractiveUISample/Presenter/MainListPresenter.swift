@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-protocol MainListPresenterProtocol: class {
+protocol MainListPresenterProtocol: AnyObject {
     func showMainList(_ mainList: [MainList])
 }
 

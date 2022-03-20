@@ -43,7 +43,7 @@ struct APIRequestManager {
 
         return Promise { seal in
             //Alamofireによる非同期通信
-            AF.request(apiUrl, method: method, parameters: parameters, encoding: URLEncoding.default, headers: APIRequestManager.requestHeader).validate().responseJSON { response in
+            AF.request(apiUrl, method: method, parameters: parameters, encoding: URLEncoding.default, headers: APIRequestManager.requestHeader).responseData { response in
 
                 switch response.result {
 

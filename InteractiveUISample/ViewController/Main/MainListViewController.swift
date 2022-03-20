@@ -14,17 +14,17 @@ class MainListViewController: UIViewController {
     @IBOutlet weak var mainListTableView: UITableView!
 
     //記事コンテンツを格納するための変数
-    fileprivate var mainListContents: [MainList] = [] {
+    private var mainListContents: [MainList] = [] {
         didSet {
             self.mainListTableView.reloadData()
         }
     }
 
     //MainListPresenterに設定したプロトコルを適用するための変数
-    fileprivate var presenter: MainListPresenter!
+    private var presenter: MainListPresenter!
 
     //適用するカスタムトランジションのクラス
-    fileprivate let articleCustomTransition = ArticleCustomTransition()
+    private let articleCustomTransition = ArticleCustomTransition()
 
     override func viewDidLoad() {
         super.viewDidLoad()
