@@ -91,6 +91,43 @@ __iOS13以降のOSに対応するための変更点：__
 
 ![iPhoneXのSafeAreaの考慮と調整について](https://camo.qiitausercontent.com/67cb94f05472ac138564fe8eb881fde5e96993b0/68747470733a2f2f71696974612d696d6167652d73746f72652e73332e616d617a6f6e6177732e636f6d2f302f31373430302f36313736613764662d623834352d383835392d383337322d3566303431356130636235392e6a706567)
 
+__【追加コード】__
+
+iPhoneXをはじめとする、ノッチがある端末の判定については値での判定をしないで下記のような形で判定する方が良さそうに思います。
+
+```swift
+// -----
+// (1) ノッチ判定用のExtension
+// -----
+extension UIDevice {
+    func hasNotch() -> Bool {
+        if let keyWindow = UIApplication.shared.windows.first(where: { $0.isKeyWindow }), keyWindow.safeAreaInsets.bottom > 0 {
+            return true
+        }
+        return false
+    }
+}
+
+// -----
+// (2) SafeAreaの有無によって調整が必要な部分での利用例
+// -----
+// グラデーションヘッダー用のY軸方向の位置（iPhoneX用に補正あり）
+private let gradientHeaderViewPositionY: CGFloat = {
+    let window = UIApplication.shared.windows.filter { $0.isKeyWindow }.first
+    let statusBarHeight = window?.windowScene?.statusBarManager?.statusBarFrame.height ?? 0
+    return -statusBarHeight
+}()
+
+// ナビゲーションバーの高さ（iPhoneX用に補正あり）
+private let navigationBarHeight: CGFloat = {
+    if UIDevice.current.hasNotch() {
+        return 88.5
+    } else {
+        return 64.0
+    }
+}()
+```
+
 ### 5. UIScrollViewの活用
 
 #### UIScrollViewとContainerViewを組み合わせてタブメニューUIを作成する
@@ -122,13 +159,13 @@ __従来通りのModal表示をするための追加対応 ※iOS13以上：__
 ※ 特にカスタムトランジションを伴う部分でこの実装を忘れてしまうと、画面遷移に不具合が発生する場合があります。
 
 ```swift
-//カスタムトランジションのプロトコルを適用させる
+// カスタムトランジションのプロトコルを適用させる
 let navigationController = UINavigationController(rootViewController: storyPageViewController)
 navigationController.transitioningDelegate = self
 
-//Modalの画面遷移を実行する
-//MEMO: iOS13以降のPresent/Dismiss時の調整
-//Present/Dismissで実行するカスタムトランジションの場合ではこの設定を忘れると画面遷移がおかしくなるので注意
+// Modalの画面遷移を実行する
+// MEMO: iOS13以降のPresent/Dismiss時の調整
+// Present/Dismissで実行するカスタムトランジションの場合ではこの設定を忘れると画面遷移がおかしくなるので注意
 if #available(iOS 13.0, *) {
     navigationController.modalPresentationStyle = .fullScreen
 }
@@ -140,10 +177,10 @@ __UINavigationBarにおけるBackButton長押しの無効化 ※iOS14以上：__
 ※ UIBarButtonItemを継承したクラスを用意し、長押しメニューのsetter部分を空にしてしまう形に変更します。
 
 ```swift
-//UIViewControllerの拡張
+// UIViewControllerの拡張
 extension UIViewController {
 
-    //戻るボタンの「戻る」テキストを削除した状態にするメソッド
+    // 戻るボタンの「戻る」テキストを削除した状態にするメソッド
     func removeBackButtonText() {
         let backButtonItem = BackBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         self.navigationController!.navigationBar.tintColor = UIColor.white
@@ -155,13 +192,74 @@ class BackBarButtonItem: UIBarButtonItem {
     @available(iOS 14.0, *)
     override var menu: UIMenu? {
         set {
-            //MEMO: 長押しメニューを消去する
-            //Do Nothing.
+            // MEMO: 長押しメニューを消去する
+            // Do Nothing.
         }
         get {
             return super.menu
         }
     }
+}
+```
+
+__Scrollの挙動に合わせたUINavigation部分に重ねる変化を加える場合の補足 ※iOS15以上：__
+
+iOS15以上
+
+```swift
+// -----
+// (1) UINavigationBarを透過する部分の抜粋
+// -----
+// NavigationControllerのカスタマイズを行う
+if #available(iOS 15.0, *) {
+ 
+    // MEMO: iOS14以前で実施していた調整をiOS15で実施する場合には、
+    // self.navigationController?.navigationBar → navigationBarAppearanceで設定していく方針を取ることになります。
+    // ※ navigationBarAppearanceでは便利なプロパティも増えています。
+    let navigationBarAppearance = UINavigationBarAppearance()
+    navigationBarAppearance.configureWithOpaqueBackground()
+    navigationBarAppearance.titleTextAttributes = [
+        NSAttributedString.Key.font : UIFont(name: "HelveticaNeue-Bold", size: 14.0)!,
+        NSAttributedString.Key.foregroundColor : UIColor.clear
+    ]
+    navigationBarAppearance.backgroundColor = UIColor.clear
+    navigationBarAppearance.shadowColor = UIColor.clear
+    navigationBarAppearance.shadowImage = UIImage()
+
+    UINavigationBar.appearance().isTranslucent = true
+    UINavigationBar.appearance().standardAppearance = navigationBarAppearance
+    UINavigationBar.appearance().scrollEdgeAppearance = navigationBarAppearance
+
+} else {
+
+    self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+    self.navigationController?.navigationBar.shadowImage = UIImage()
+    self.navigationController?.navigationBar.tintColor = UIColor.white
+    self.navigationItem.hidesBackButton = true
+}
+
+// -----
+// (2) 普通にUINavigationBarを表示する部分の抜粋
+// -----
+// MEMO: 遷移元となるArticleViewControllerでUINavigationBarで変更を加えてしまっているので、この部分で元の設定を再度適用する
+if #available(iOS 15.0, *) {
+
+    let navigationBarAppearance = UINavigationBarAppearance()
+    navigationBarAppearance.configureWithOpaqueBackground()
+    navigationBarAppearance.titleTextAttributes = [
+        NSAttributedString.Key.font : UIFont(name: "HelveticaNeue-Bold", size: 14.0)!,
+        NSAttributedString.Key.foregroundColor : UIColor.white
+    ]
+    navigationBarAppearance.backgroundColor = UIColor(code: "#76b6e2")
+    UINavigationBar.appearance().standardAppearance = navigationBarAppearance
+    UINavigationBar.appearance().scrollEdgeAppearance = navigationBarAppearance
+
+} else {
+
+    self.navigationController?.navigationBar.barTintColor = ColorDefinition.navigationColor.getColor()
+    self.navigationController?.navigationBar.isTranslucent = false
+    self.navigationController?.navigationBar.tintColor = UIColor.white
+    self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.white]
 }
 ```
 
